@@ -111,7 +111,7 @@
 		48F9AC64227E419A0054F222 /* Moon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Moon.h; path = Code/Moon.h; sourceTree = SOURCE_ROOT; };
 		48F9AC66227E41E70054F222 /* tMoon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tMoon.bmp; sourceTree = "<group>"; };
 		48F9AC68227E4D7F0054F222 /* Windmill.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Windmill.cpp; path = Code/Windmill.cpp; sourceTree = SOURCE_ROOT; };
-		48F9AC69227E4D7F0054F222 /* Windmill.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Windmill.hpp; path = Code/Windmill.hpp; sourceTree = SOURCE_ROOT; };
+		48F9AC69227E4D7F0054F222 /* Windmill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Windmill.h; path = Code/Windmill.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,12 +175,12 @@
 				192BE3C91E4CBD960040131F /* MyScene.h */,
 				48F9AC0F227CE85C0054F222 /* Human.cpp */,
 				48F9AC10227CE85C0054F222 /* Human.h */,
-				48F9AC0A227CAEDA0054F222 /* House.h */,
-				48F9AC09227CAEDA0054F222 /* House.cpp */,
 				48F9AC43227DF21D0054F222 /* Lamp.h */,
 				48F9AC42227DF21D0054F222 /* Lamp.cpp */,
+				48F9AC09227CAEDA0054F222 /* House.cpp */,
+				48F9AC0A227CAEDA0054F222 /* House.h */,
 				48F9AC68227E4D7F0054F222 /* Windmill.cpp */,
-				48F9AC69227E4D7F0054F222 /* Windmill.hpp */,
+				48F9AC69227E4D7F0054F222 /* Windmill.h */,
 			);
 			name = Code;
 			sourceTree = "<group>";

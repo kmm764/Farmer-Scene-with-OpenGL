@@ -4,6 +4,7 @@
 #include "Human.h"
 #include "Lamp.h"
 #include "Moon.h"
+#include "Windmill.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -34,6 +35,12 @@ void MyScene::Initialise()
     GLuint tLamp = Scene::GetTexture("lamp.bmp");
     GLuint tChain = Scene::GetTexture("chain.bmp");
     GLuint tMoon = Scene::GetTexture("tMoon.bmp");
+    
+    GLuint tBase = Scene::GetTexture("tMoon.bmp");
+    GLuint tMiddle = Scene::GetTexture("tMoon.bmp");
+    GLuint tTop = Scene::GetTexture("tMoon.bmp");
+    GLuint tRoof = Scene::GetTexture("tMoon.bmp");
+    GLuint tBlade = Scene::GetTexture("tMoon.bmp");
    
     
     House *house = new House(fullBricks,roof,door,tWindow);
@@ -55,6 +62,9 @@ void MyScene::Initialise()
     
     Moon *moon = new Moon(tMoon);
     AddObjectToScene(moon);
+    
+    Windmill *windmill = new Windmill(tBase,tMiddle, tTop, tRoof, tBlade);
+    AddObjectToScene(windmill);
     
 }
 

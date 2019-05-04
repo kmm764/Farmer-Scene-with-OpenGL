@@ -9,12 +9,12 @@ Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), currentButton(0), mouseX(
 
 void Camera::Reset(){
 	// set the camera position to start at (0,0,0)
-	eyePosition[0] = 500.0f;
+	eyePosition[0] = 600.0f;
 	eyePosition[1] = 100.0f;
 	eyePosition[2] = -300+0.5f * static_cast<float>(Scene::GetWindowHeight()) / static_cast<float>(tan(M_PI / 6.0));//0.0f;
 
 	// set the view direction vector of the camera to be (0,0,-1)
-	vd[0] = -1.5f;
+	vd[0] = -1.1f;
 	vd[1] = 0.0f;
 	vd[2] = -1.0f;
 
