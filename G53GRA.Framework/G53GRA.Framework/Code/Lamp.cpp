@@ -14,15 +14,13 @@ void Lamp::Display()
 {
     //glPushAttrib(GL_ALL_ATTRIB_BITS);
     glPushMatrix();
-    glTranslatef(-120.f,50.1f,0.f);
+    glTranslatef(180.f,80.1f,60.f);
     DrawWholeLamp();
     
-    //glTranslatef(50.f, 0.f, -200.f);
-    
-
-    
-   
     glPopMatrix();
+    
+    
+    
 }
 
 void Lamp::Update(const double &deltaTime)
@@ -73,7 +71,7 @@ void Lamp::DrawWholeLamp()
     //lighting from the lamp to nearby objects
     glEnable(GL_LIGHT1);
     
-    GLfloat position[4] = { 0.f, 0.f, (rotationLamp+rotationChain), 1.0f};
+    GLfloat position[4] = { 0.f, -20.f, (rotationLamp+rotationChain), 1.0f};
     glLightfv(GL_LIGHT1, GL_POSITION, position);
     
     GLfloat ambient1[3] = { 0.f, 0.f, 0.f};

@@ -28,8 +28,8 @@ void Human::Display()
     zHoe = 70;
     
     
-    
-    glTranslatef(250.f,30.f,50.f);
+    glPushMatrix();
+    glTranslatef(300.f,30.f,50.f);
     //glEnable(GL_LIGHT1);
     
     //glRotatef( RotateTravelled, 0, 0, 1);
@@ -39,10 +39,10 @@ void Human::Display()
     glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
     DrawHuman();
     
-    glTranslatef(50.f, 0.f, -200.f);
+    glTranslatef(150.f, 0.f, -200.f);
     glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
     DrawHuman();
-    
+    glPopMatrix();
     glEnable(GL_LIGHT1);
     //glPopAttrib();
     /*

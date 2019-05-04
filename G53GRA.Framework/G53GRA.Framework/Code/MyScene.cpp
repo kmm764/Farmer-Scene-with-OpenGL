@@ -25,10 +25,10 @@ void MyScene::Initialise()
     GLuint lf = Scene::GetTexture("hills_lf.bmp");
     GLuint rt = Scene::GetTexture("hills_rt.bmp");
     GLuint up = Scene::GetTexture("hills_up.bmp");
-    GLuint dn = Scene::GetTexture("grass.bmp");
+    GLuint dn = Scene::GetTexture("grass2.bmp");
     
-    GLuint roof = Scene::GetTexture("roof.bmp");
-    GLuint fullBricks = Scene::GetTexture("bricks.bmp");
+    GLuint roof = Scene::GetTexture("brownRoof.bmp");
+    GLuint fullBricks = Scene::GetTexture("tBricks3.bmp");
     GLuint door = Scene::GetTexture("door.bmp");
     GLuint tWindow = Scene::GetTexture("window.bmp");
     GLuint tLamp = Scene::GetTexture("lamp.bmp");

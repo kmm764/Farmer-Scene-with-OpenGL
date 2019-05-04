@@ -28,35 +28,35 @@ void House::Display()
     glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     //front
    
-    //drawing house
+    //drawing house, the cube
     glBindTexture(GL_TEXTURE_2D, _texFullBricks);
     glBegin(GL_QUADS);
     {
         //front
         glNormal3f(0.0f, 0.0f, 1.0f);
         glTexCoord2f(0.f, 0.f); glVertex3f(0.f, 0.f, 0.f);
-        glTexCoord2f(1.f, 0.f); glVertex3f(150.f,0.f,0.f);
-        glTexCoord2f(1.f, 1.f); glVertex3f(150.f,100.f,0.f);
-        glTexCoord2f(0.f, 1.f); glVertex3f(0.f,100.f,0.f);
+        glTexCoord2f(2.f, 0.f); glVertex3f(150.f,0.f,0.f);
+        glTexCoord2f(2.f, 2.f); glVertex3f(150.f,100.f,0.f);
+        glTexCoord2f(0.f, 2.f); glVertex3f(0.f,100.f,0.f);
     
         //right side
         glNormal3f(1.0f, 0.0f, 0.0f);
         glTexCoord2f(0.f, 0.f); glVertex3f(150.f, 0.f, 0.f);
-        glTexCoord2f(2.f, 0.f);glVertex3f(150.f,0.f,-300.f);
-        glTexCoord2f(2.f, 1.f);glVertex3f(150.f,100.f,-300.f); //print the texture twice, so that the texture won't be stretched out
-        glTexCoord2f(0.f, 1.f);glVertex3f(150.f,100.f,0.f);
+        glTexCoord2f(4.f, 0.f);glVertex3f(150.f,0.f,-300.f);
+        glTexCoord2f(4.f, 2.f);glVertex3f(150.f,100.f,-300.f); //print the texture twice, so that the texture won't be stretched out
+        glTexCoord2f(0.f, 2.f);glVertex3f(150.f,100.f,0.f);
         //left side
         glNormal3f(-1.0f, 0.0f, 0.0f);
-        glTexCoord2f(2.f, 0.f);glVertex3f(0.f, 0.f, 0.f);
-        glTexCoord2f(2.f, 1.f);glVertex3f(0.f,100.f,0.f);//same for the left hand side
-        glTexCoord2f(0.f, 1.f);glVertex3f(0.f,100.f,-300.f);
+        glTexCoord2f(4.f, 0.f);glVertex3f(0.f, 0.f, 0.f);
+        glTexCoord2f(4.f, 2.f);glVertex3f(0.f,100.f,0.f);//same for the left hand side
+        glTexCoord2f(0.f, 2.f);glVertex3f(0.f,100.f,-300.f);
         glTexCoord2f(0.f, 0.f);glVertex3f(0.f,0.f,-300.f);
         //back
         glNormal3f(0.0f, 0.0f, -1.0f);
         glTexCoord2f(0.f, 0.f);glVertex3f(150.f, 0.f, -300.f);
-        glTexCoord2f(1.f, 0.f);glVertex3f(0.f,0.f,-300.f);
-        glTexCoord2f(1.f, 1.f);glVertex3f(0.f,100.f,-300.f);
-        glTexCoord2f(0.f, 1.f);glVertex3f(150.f,100.f,-300.f);
+        glTexCoord2f(2.f, 0.f);glVertex3f(0.f,0.f,-300.f);
+        glTexCoord2f(2.f, 2.f);glVertex3f(0.f,100.f,-300.f);
+        glTexCoord2f(0.f, 2.f);glVertex3f(150.f,100.f,-300.f);
         
     }
     glEnd();
@@ -67,18 +67,19 @@ void House::Display()
     glBindTexture(GL_TEXTURE_2D, _texFullBricks);
     glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     
+    //build the triangle above cube
     glBegin(GL_TRIANGLES);
     {
         //front triangle of the house
         glNormal3f(0.0f, 0.0f, 1.0f);
         glTexCoord2f(0.f, 0.f); glVertex3f(0.f, 100.f, 0.f);
-        glTexCoord2f(1.f, 0.f); glVertex3f(150.f,100.f,0.f);
-        glTexCoord2f(0.5f, 0.5f); glVertex3f(75.f,150.f,0.f);
+        glTexCoord2f(2.f, 0.f); glVertex3f(150.f,100.f,0.f);
+        glTexCoord2f(1.f, 1.f); glVertex3f(75.f,150.f,0.f);//1 and 1 to make the texture same as the cube
         //back triangle of the house
         glNormal3f(0.0f, 0.0f, -1.0f);
         glTexCoord2f(0.f, 0.f);glVertex3f(0.f, 100.f, -300.f);
-        glTexCoord2f(0.5f, 0.5f); glVertex3f(75.f,150.f,-300.f);
-        glTexCoord2f(1.f, 0.f);glVertex3f(150.f,100.f,-300.f);
+        glTexCoord2f(1.f, 1.f); glVertex3f(75.f,150.f,-300.f);
+        glTexCoord2f(2.f, 0.f);glVertex3f(150.f,100.f,-300.f);
         
         
     }
@@ -88,6 +89,8 @@ void House::Display()
     //roof
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _texRoof);
+    
+    //building roof, double sided for the two roof
     glBegin(GL_QUADS);
     {
        
@@ -115,11 +118,8 @@ void House::Display()
     }
     
     glEnd();
-    //glEnable(GL_LIGHTING);
-    glBindTexture(GL_TEXTURE_2D, 0);
-    glDisable(GL_TEXTURE_2D);
     
-    glEnable(GL_TEXTURE_2D);
+    
     glBindTexture(GL_TEXTURE_2D, _texDoor);
     
     
