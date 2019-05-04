@@ -14,7 +14,7 @@ void Windmill::Display(){
     glPushMatrix();
     glTranslatef(300.f,30.f,50.f);
     glScalef(100, 100, 100);
-    DrawCube(0);
+    DrawCube(1);
     glPopMatrix();
 }
 
@@ -31,7 +31,7 @@ void Windmill::DrawRoof(){}
 void Windmill::DrawBlade(){}
 
 void Windmill::DrawCube(int x){
-    unsigned char tex;
+    unsigned char tex; //experimenting with switch, makes coding more efficient
     switch (x)
     {
         

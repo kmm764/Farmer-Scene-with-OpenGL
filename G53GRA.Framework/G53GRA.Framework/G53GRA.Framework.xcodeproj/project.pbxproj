@@ -36,6 +36,9 @@
 		48F9AC65227E419B0054F222 /* Moon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC63227E419A0054F222 /* Moon.cpp */; };
 		48F9AC67227E41ED0054F222 /* tMoon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC66227E41E70054F222 /* tMoon.bmp */; };
 		48F9AC6A227E4D7F0054F222 /* Windmill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC68227E4D7F0054F222 /* Windmill.cpp */; };
+		48F9AC6E227E57840054F222 /* tBottom.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC6C227E577F0054F222 /* tBottom.bmp */; };
+		48F9AC6F227E57840054F222 /* tMiddle.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC6D227E57800054F222 /* tMiddle.bmp */; };
+		48F9AC70227E57840054F222 /* tTop.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC6B227E577D0054F222 /* tTop.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +48,9 @@
 			dstPath = .;
 			dstSubfolderSpec = 7;
 			files = (
+				48F9AC6E227E57840054F222 /* tBottom.bmp in CopyFiles */,
+				48F9AC6F227E57840054F222 /* tMiddle.bmp in CopyFiles */,
+				48F9AC70227E57840054F222 /* tTop.bmp in CopyFiles */,
 				48F9AC67227E41ED0054F222 /* tMoon.bmp in CopyFiles */,
 				48F9AC5F227E39980054F222 /* brownRoof.bmp in CopyFiles */,
 				48F9AC5D227E39150054F222 /* tBricks3.bmp in CopyFiles */,
@@ -112,6 +118,9 @@
 		48F9AC66227E41E70054F222 /* tMoon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tMoon.bmp; sourceTree = "<group>"; };
 		48F9AC68227E4D7F0054F222 /* Windmill.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Windmill.cpp; path = Code/Windmill.cpp; sourceTree = SOURCE_ROOT; };
 		48F9AC69227E4D7F0054F222 /* Windmill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Windmill.h; path = Code/Windmill.h; sourceTree = SOURCE_ROOT; };
+		48F9AC6B227E577D0054F222 /* tTop.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tTop.bmp; sourceTree = "<group>"; };
+		48F9AC6C227E577F0054F222 /* tBottom.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tBottom.bmp; sourceTree = "<group>"; };
+		48F9AC6D227E57800054F222 /* tMiddle.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tMiddle.bmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +240,9 @@
 		19968D6C1E54B35000540281 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				48F9AC6C227E577F0054F222 /* tBottom.bmp */,
+				48F9AC6D227E57800054F222 /* tMiddle.bmp */,
+				48F9AC6B227E577D0054F222 /* tTop.bmp */,
 				48F9AC66227E41E70054F222 /* tMoon.bmp */,
 				48F9AC5E227E39900054F222 /* brownRoof.bmp */,
 				48F9AC5C227E390F0054F222 /* tBricks3.bmp */,
