@@ -37,7 +37,7 @@ void Lamp::DrawWholeLamp()
     float rotationLamp = RotateSin*10;
     glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the lamp glow
     
-    GLfloat position1[4] = { -30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp
+    GLfloat position1[4] = { 30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp
     glLightfv(GL_LIGHT2, GL_POSITION, position1);
     GLfloat ambient2[3] = { 1.f, 1.f, 1.f}; //ambient on the lamp to make a glow effect
     glLightfv(GL_LIGHT2, GL_AMBIENT, ambient2); //only ambient matters here

@@ -3,7 +3,7 @@
 #include "House.h"
 #include "Human.h"
 #include "Lamp.h"
-
+#include "Moon.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -20,11 +20,11 @@ void MyScene::Initialise()
 
     //aaaa
     
-    GLuint ft = Scene::GetTexture("hills_ft.bmp");
+    GLuint ft = Scene::GetTexture("stars.bmp");
     GLuint bk = Scene::GetTexture("stars.bmp");
-    GLuint lf = Scene::GetTexture("hills_lf.bmp");
-    GLuint rt = Scene::GetTexture("hills_rt.bmp");
-    GLuint up = Scene::GetTexture("hills_up.bmp");
+    GLuint lf = Scene::GetTexture("stars.bmp");
+    GLuint rt = Scene::GetTexture("stars.bmp");
+    GLuint up = Scene::GetTexture("stars.bmp");
     GLuint dn = Scene::GetTexture("grass2.bmp");
     
     GLuint roof = Scene::GetTexture("brownRoof.bmp");
@@ -33,6 +33,7 @@ void MyScene::Initialise()
     GLuint tWindow = Scene::GetTexture("window.bmp");
     GLuint tLamp = Scene::GetTexture("lamp.bmp");
     GLuint tChain = Scene::GetTexture("chain.bmp");
+    GLuint tMoon = Scene::GetTexture("tMoon.bmp");
    
     
     House *house = new House(fullBricks,roof,door,tWindow);
@@ -52,6 +53,8 @@ void MyScene::Initialise()
     Lamp *lamp= new Lamp(tLamp,tChain);
     AddObjectToScene(lamp);
     
+    Moon *moon = new Moon(tMoon);
+    AddObjectToScene(moon);
     
 }
 
