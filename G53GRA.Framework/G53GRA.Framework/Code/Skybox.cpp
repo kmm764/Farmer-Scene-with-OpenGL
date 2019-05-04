@@ -86,7 +86,7 @@ void Skybox::Display()
     //ground
     glPushMatrix();
     glTranslatef(0.f, 1000.f, 0.f);
-    glScalef(2000.f, 1000.f, 2000.f);
+    glScalef(1000.f, 1000.f, 1000.f);
     const float TESS_AMT = 25.0f;
     float square = 1.0f / TESS_AMT;
     

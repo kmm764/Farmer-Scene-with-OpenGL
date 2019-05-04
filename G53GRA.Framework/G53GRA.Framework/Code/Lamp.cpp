@@ -34,7 +34,7 @@ void Lamp::Update(const double &deltaTime)
 void Lamp::DrawWholeLamp()
 {
     float rotationChain = RotateSin*10;
-    float rotationLamp = RotateSin*10;
+    float rotationLamp = RotateSin*20;
     glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the lamp glow
     
     GLfloat position1[4] = { 30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp
@@ -84,7 +84,7 @@ void Lamp::DrawWholeLamp()
     
     glLightf(GL_LIGHT1, GL_CONSTANT_ATTENUATION, 0.f);
     glLightf(GL_LIGHT1, GL_LINEAR_ATTENUATION, 0.001f);
-    glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.0001f);
+    glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.00008f);
     
     //
 }

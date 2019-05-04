@@ -16,7 +16,7 @@ Moon::Moon(GLuint tMoon): _tMoon(tMoon)
 void Moon::Display()
 {
     
-    float moonPosition[3] = {-600.f,580.1f,-820.f};
+    float moonPosition[3] = {-600.f,800.1f,-820.f};
     //glPushAttrib(GL_ALL_ATTRIB_BITS);
     glPushMatrix();
     glTranslatef(moonPosition[0],moonPosition[1],moonPosition[2]);

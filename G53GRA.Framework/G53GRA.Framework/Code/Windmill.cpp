@@ -11,20 +11,38 @@
 Windmill::Windmill(GLuint tBase, GLuint tMiddle, GLuint tTop, GLuint tRoof, GLuint tBlade): _tBase(tBase), _tMiddle(tMiddle), _tTop(tTop), _tRoof(tRoof), _tBlade(tBlade){}
 
 void Windmill::Display(){
+    float yBase = 50;
+    float yMiddle = 250;
+    float yTop = 50;
+    
     glPushMatrix();
-    glTranslatef(300.f,30.f,50.f);
-    glScalef(100, 100, 100);
-    DrawCube(1);
+    glTranslatef(-300.f,0.f,-450.f);
+    
+    glPushMatrix();
+    glScalef(150, yBase, 150);
+    DrawCube(1); //1 is drawing the base
+    glPopMatrix();
+    
+    glTranslatef(0.f,yBase,0.f);
+    
+    glPushMatrix();
+    glScalef(150, yMiddle, 150);
+    DrawCube(3); //2 is drawing the middle part
+    glPopMatrix();
+    
+    /*glTranslatef(0.f,yMiddle,0.f);
+    
+    glPushMatrix();
+    glScalef(150, yTop, 150);
+    DrawCube(3); //2 is drawing the middle part
+    glPopMatrix();*/
+    
     glPopMatrix();
 }
 
 void Windmill::Update(const double &deltaTime){}
 
-void Windmill::DrawBase(){}
-
-void Windmill::DrawMiddle(){}
-
-void Windmill::DrawTop(){}
+void Windmill::DrawTriangle(){}
 
 void Windmill::DrawRoof(){}
 

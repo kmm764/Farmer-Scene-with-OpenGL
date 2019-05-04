@@ -23,9 +23,7 @@ public:
     void Update(const double &deltaTime);
     void Display();
     void DrawCube(int x);
-    void DrawBase();
-    void DrawMiddle();
-    void DrawTop();
+    void DrawTriangle();
     void DrawRoof();
     void DrawBlade();
     
