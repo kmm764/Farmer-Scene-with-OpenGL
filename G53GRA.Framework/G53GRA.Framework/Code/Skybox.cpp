@@ -19,7 +19,7 @@ void Skybox::Display()
 	//glPushAttrib(GL_ALL_ATTRIB_BITS);
     glColor4f(1.f, 1.f, 1.f,1.f);
     glTranslatef(-1000.f, 0.f, -1000.f);
-    glScalef(2000.f, 1000.f, 2000.f);
+    glScalef(2000.f, 2000.f, 2000.f);
     //Back
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _tBack);
