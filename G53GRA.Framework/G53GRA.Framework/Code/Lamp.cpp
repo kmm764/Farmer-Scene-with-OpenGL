@@ -30,12 +30,15 @@ void Lamp::Update(const double &deltaTime)
     
     DistanceTravelled +=deltaTime*100;
     RotateTravelled += deltaTime*1;
-    RotateSin = sin(RotateTravelled)+1;
+    RotateSin = sin(RotateTravelled);// make sure the number loops between negative and positive
     
 }
 void Lamp::DrawWholeLamp()
 {
-    glPushAttrib(GL_ALL_ATTRIB_BITS); //push attrib to make sure only the lamp glow
+    float rotationChain = RotateSin*10;
+    float rotationLamp = RotateSin*10;
+    glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the lamp glow
+    
     GLfloat position1[4] = { -30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp
     glLightfv(GL_LIGHT2, GL_POSITION, position1);
     GLfloat ambient2[3] = { 1.f, 1.f, 1.f}; //ambient on the lamp to make a glow effect
@@ -44,28 +47,33 @@ void Lamp::DrawWholeLamp()
     
     glColor4f(1.f, 1.f, 1.f, 1.f);
     glDisable(GL_LIGHT1);
-    glRotatef(180, 0, 0, 1);
-    glPushMatrix();
-    //
     
+    
+    glRotatef(180.f, 0.f, 0.f, 1.f);//make the lamp face downwards
+    
+
+    glPushMatrix();
+    glRotatef(rotationChain, 1.f, 0.f, 0.f);
+    
+    glPushMatrix();
     glScalef(1.5f, 10.f, 1.5f);
-    DrawChain();
+    DrawChain(); //draw the chain first
     
-    glPopMatrix();
-    glPushMatrix();
+    glPopMatrix();//pop the scale
+    
     glTranslatef(-3.3f, 10.f, 3.3f); //move the rope to the middle of the lamp
-    glScalef(7.9f, 16.6f, 7.9f); //scale to lamp
-    //glColor4f(1.f, 1.f, 1.f, 1.f);
+    glRotatef(rotationLamp, 1.f, 0.f, 0.f);
+    glPushMatrix();
+    glScalef(7.9f, 16.6f, 7.9f); //scale the lamp
     DrawLamp();
-    
-    
     
     glPopMatrix();
     glPopAttrib(); //to make only the lamp glow
-    
+    glPopMatrix();
+    //lighting from the lamp to nearby objects
     glEnable(GL_LIGHT1);
     
-    GLfloat position[4] = { 0.f, 30.f, 0.f, 1.0f};
+    GLfloat position[4] = { 0.f, 0.f, (rotationLamp+rotationChain), 1.0f};
     glLightfv(GL_LIGHT1, GL_POSITION, position);
     
     GLfloat ambient1[3] = { 0.f, 0.f, 0.f};
