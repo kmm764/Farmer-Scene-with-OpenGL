@@ -56,8 +56,10 @@ void Windmill::Display(){
     glPopMatrix();
     
     glPushMatrix();
+    
+    glRotatef(RotateTravelled*10, 0.f, 0.f, 1.f);
+    glTranslatef(-5.f, -5.f, 0.f);
     glRotatef(90, 1.f, 0.f, 0.f);
-    glRotatef(RotateTravelled*10, 0.f, 1.f, 0.f);
     glScalef(10.f, 55.f, 10.f);
     DrawCube(3); //3 is the wood texture
     glPopMatrix();
