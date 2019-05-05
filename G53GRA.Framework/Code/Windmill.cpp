@@ -9,13 +9,14 @@
 #include "Windmill.h"
 #include<cmath>
 
-Windmill::Windmill(GLuint tBase, GLuint tMiddle, GLuint tTop, GLuint tRoof, GLuint tBlade): _tBase(tBase), _tMiddle(tMiddle), _tTop(tTop), _tRoof(tRoof), _tBlade(tBlade){}
+Windmill::Windmill(GLuint tBase, GLuint tMiddle, GLuint tTop, GLuint tRoof, GLuint tBlade): _tBase(tBase), _tMiddle(tMiddle), _tTop(tTop), _tRoof(tRoof), _tBlade(tBlade),uKey(0),yKey(0){}
 
 void Windmill::Display(){
     float yBase = 50;
     float yMiddle = 250;
     float yTop = 50;
-    
+    float R = RotateTravelled;
+    int onBool = 1;
     
     glPushMatrix();
     glTranslatef(-300.f,0.f,-450.f);
@@ -67,26 +68,26 @@ void Windmill::Display(){
     
     //blade 1
     glPushMatrix();
-    glRotatef(RotateTravelled*10, 0.f, 0.f, 1.f);
+    TurnBlade(0, onBool, R);
     DrawBlade();
     glPopMatrix();
     
     //blade 2
     glPushMatrix();
-    glRotatef(RotateTravelled*10+90, 0.f, 0.f, 1.f);
+    TurnBlade(1, onBool, R); //1 is blade 2
     DrawBlade();
     glPopMatrix();
     
     
     //blade 3
     glPushMatrix();
-    glRotatef(RotateTravelled*10+180, 0.f, 0.f, 1.f);
+    TurnBlade(2, onBool, R); //2 is blade 3
     DrawBlade();
     glPopMatrix();
     
     //blade 4
     glPushMatrix();
-    glRotatef(RotateTravelled*10+270, 0.f, 0.f, 1.f);
+    TurnBlade(3, onBool, R); //3 is blade 4
     DrawBlade();
     glPopMatrix();
     
@@ -95,9 +96,86 @@ void Windmill::Display(){
 }
 
 void Windmill::Update(const double &deltaTime){
-    RotateTravelled += deltaTime*1;
+    //RotateTravelled += deltaTime*1;
     RotateSin = sin(RotateTravelled);// make sure the number loops between negative and positive
+    if (uKey){ //stop the windmill if hold u down
+        
+    }
+    else if (yKey){ //speed up the windmill if hold y down
+        RotateTravelled += deltaTime*3;
+    }
+    else{ //move the windmill at speed 1 if no key pressed
+        RotateTravelled += deltaTime*1;
+    }
 }
+
+//created a Windmill class to make a option to turn the windmill on and off, and easiler to create blades
+void Windmill::TurnBlade(int bladeN, int onOff, float rN)
+{
+    switch (onOff) {
+        case 0:
+            switch (bladeN) {
+                case 0:
+                    
+                    break;
+                    
+                case 1:
+                    glRotatef(90.f, 0.f, 0.f, 1.f);
+                    break;
+                case 2:
+                    glRotatef(180.f, 0.f, 0.f, 1.f);
+                    break;
+                case 3:
+                    glRotatef(270.f, 0.f, 0.f, 1.f);
+                    break;
+                    
+                default:
+                    break;
+            }
+            
+         case 1:
+            switch (bladeN) {
+                case 0:
+                    glRotatef(rN*10, 0.f, 0.f, 1.f);
+                    break;
+                    
+                case 1:
+                    glRotatef(rN*10+90, 0.f, 0.f, 1.f);
+                    break;
+                case 2:
+                    glRotatef(rN*10+180, 0.f, 0.f, 1.f);
+                    break;
+                case 3:
+                    glRotatef(rN*10+270, 0.f, 0.f, 1.f);
+                    break;
+                    
+                default:
+                    break;
+            }
+        default:
+            break;
+    }
+    
+}
+
+void Windmill::HandleKey(unsigned char key, int state, int x, int y)
+{
+    switch (key)
+    {
+        
+        case 'u':
+            uKey = state;
+            break;
+            
+        case 'y':
+            yKey = state;
+            break;
+        
+        default:
+            break;
+    }
+}
+
 
 void Windmill::DrawBlade(){
     
