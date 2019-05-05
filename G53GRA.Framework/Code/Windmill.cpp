@@ -7,6 +7,7 @@
 //
 
 #include "Windmill.h"
+#include<cmath>
 
 Windmill::Windmill(GLuint tBase, GLuint tMiddle, GLuint tTop, GLuint tRoof, GLuint tBlade): _tBase(tBase), _tMiddle(tMiddle), _tTop(tTop), _tRoof(tRoof), _tBlade(tBlade){}
 
@@ -27,7 +28,7 @@ void Windmill::Display(){
     
     glPushMatrix();
     glScalef(150, yMiddle, 150);
-    DrawCube(3); //2 is drawing the middle part
+    DrawCube(2); //2 is drawing the middle part
     glPopMatrix();
     
     glTranslatef(0.f,yMiddle,0.f);
@@ -38,18 +39,50 @@ void Windmill::Display(){
     glPopMatrix();
     
     glPushMatrix();
-    glScalef(150, yTop, 150);
+    glTranslatef(0, 0, 20);
+    glScalef(150, yTop, 190);
     DrawRoof();
+    glPopMatrix();
+    
+    glPushMatrix();
+    glTranslatef(75.f, -50.f, 0.f);
+    
+    //base wood
+    glPushMatrix();
+    glTranslatef(-15.f, -15.f, 0.f);
+    glRotatef(90, 1.f, 0.f, 0.f);
+    glScalef(30, 10, 30);
+    DrawCube(3);
+    glPopMatrix();
+    
+    glPushMatrix();
+    glRotatef(90, 1.f, 0.f, 0.f);
+    glRotatef(RotateTravelled*10, 0.f, 1.f, 0.f);
+    glScalef(10.f, 55.f, 10.f);
+    DrawCube(3); //3 is the wood texture
+    glPopMatrix();
+    
+    /*glPushMatrix();
+    glTranslatef(70.f, -45.f, 50.f);
+    
+    glScalef(10.f, 55.f, 10.f);
+    DrawCube(5);
+    glPopMatrix();*/
+    
+    
     glPopMatrix();
     
     glPopMatrix();
 }
 
-void Windmill::Update(const double &deltaTime){}
+void Windmill::Update(const double &deltaTime){
+    RotateTravelled += deltaTime*1;
+    RotateSin = sin(RotateTravelled);// make sure the number loops between negative and positive
+}
 
 void Windmill::DrawTriangle(){
     glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, _tTop);
+    glBindTexture(GL_TEXTURE_2D, _tMiddle);
     glColor4f(1.f, 1.f, 1.f, 1.f);
     glBegin(GL_TRIANGLES);
     {
@@ -173,29 +206,23 @@ void Windmill::DrawCube(int x){
         glTexCoord2f(1.f, 0.f); glVertex3f(0.f,0.f,0.f);
         glTexCoord2f(1.f, 1.f); glVertex3f(0.f,1.f,0.f);
         glTexCoord2f(0.f, 1.f); glVertex3f(0.f, 1.f, -1.f);
+        
+        //front
+        glNormal3f(0.f, 1.f, 0.f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f,1.f,0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(1.f,1.f,0.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(1.f,1.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(0.f, 1.f, -1.f);
+        //bottom body
+        glNormal3f(0.f, -1.f, 0.f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f,0.f,0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(0.f,0.f,-1.f);
+        glTexCoord2f(1.f,1.f);glVertex3f(1.f,0.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(1.f, 0.f, 0.f);
     }
     glEnd();
     glBindTexture(GL_TEXTURE_2D, 0);
-    glDisable(GL_TEXTURE_2D);
-    glColor4f(0.f, 0.f, 0.f, 1.f);
-    glBegin(GL_QUADS);
-    {
-        
-        //top body
-        glNormal3f(0.f, 1.f, 0.f);
-        glVertex3f(0.f,1.f,0.f);
-        glVertex3f(1.f,1.f,0.f);
-        glVertex3f(1.f,1.f,-1.f);
-        glVertex3f(0.f, 1.f, -1.f);
-        //bottom body
-        glNormal3f(0.f, -1.f, 0.f);
-        glVertex3f(0.f,0.f,0.f);
-        glVertex3f(0.f,0.f,-1.f);
-        glVertex3f(1.f,0.f,-1.f);
-        glVertex3f(1.f, 0.f, 0.f);
-    }
     
-    glEnd();
     glColor4f(1.f, 1.f, 1.f, 1.f);
     
     

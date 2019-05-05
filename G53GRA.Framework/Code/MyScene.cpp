@@ -16,14 +16,14 @@ void MyScene::Initialise()
 {
     glEnable(GL_LIGHT1);
 	glClearColor(0.f, 0.f, 0.f, 1.0f);
-    GlobalLight(0.1f,0.1f,0.1f);
+    GlobalLight(0.01f,0.01f,0.01f);
     
 
     //aaaa
     
     GLuint ft = Scene::GetTexture("stars.bmp"); //give options to change it to other bmp
     GLuint bk = Scene::GetTexture("stars.bmp"); //but decided on using only star.bmp for skybox
-    GLuint lf = Scene::GetTexture("stars.bmp");
+    GLuint lf = Scene::GetTexture("grass2.bmp");
     GLuint rt = Scene::GetTexture("stars.bmp");
     GLuint up = Scene::GetTexture("stars.bmp");
     GLuint dn = Scene::GetTexture("grass2.bmp");
@@ -38,7 +38,7 @@ void MyScene::Initialise()
     
     GLuint tBase = Scene::GetTexture("tBricks.bmp");
     GLuint tMiddle = Scene::GetTexture("tTop.bmp");
-    GLuint tTop = Scene::GetTexture("tTop.bmp");
+    GLuint tTop = Scene::GetTexture("tRoof.bmp");
     GLuint tRoof = Scene::GetTexture("brownRoof.bmp");
     GLuint tBlade = Scene::GetTexture("tMoon.bmp");
    

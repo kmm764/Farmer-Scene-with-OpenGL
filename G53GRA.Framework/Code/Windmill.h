@@ -30,8 +30,8 @@ public:
 private:
     GLuint _tBase, _tMiddle, _tTop, _tRoof, _tBlade;
     
-    //float RotateTravelled =0;
-    //float RotateSin = 0;
+    float RotateTravelled =0;
+    float RotateSin = 0;
     
     
     
