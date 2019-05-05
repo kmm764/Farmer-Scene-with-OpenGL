@@ -15,6 +15,18 @@ _tTop(tTop), _tBottom(tBottom), _tLeft(tLeft), _tRight(tRight), _tFront(tFront),
 
 void Skybox::Display()
 {
+    
+    glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the lamp glow
+    
+    GLfloat position1[4] = { 30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp
+    glLightfv(GL_LIGHT2, GL_POSITION, position1);
+    GLfloat ambient2[3] = { 0.8f, 0.8f, 0.8f}; //ambient on the lamp to make a glow effect
+    glLightfv(GL_LIGHT2, GL_AMBIENT, ambient2); //only ambient matters here
+    glEnable(GL_LIGHT2);
+    
+    
+    
+    
 	glPushMatrix();
 	//glPushAttrib(GL_ALL_ATTRIB_BITS);
     glColor4f(1.f, 1.f, 1.f,1.f);
@@ -80,7 +92,7 @@ void Skybox::Display()
     glPopMatrix();
     //glNormal3f(0.0f, 1.0f, 0.0f);
     
-    
+    glPopAttrib();
     
     
     //ground

@@ -26,7 +26,7 @@ void MyScene::Initialise()
     GLuint lf = Scene::GetTexture("grass2.bmp");
     GLuint rt = Scene::GetTexture("stars.bmp");
     GLuint up = Scene::GetTexture("stars.bmp");
-    GLuint dn = Scene::GetTexture("grass2.bmp");
+    GLuint dn = Scene::GetTexture("grass3.bmp");
     
     GLuint roof = Scene::GetTexture("brownRoof.bmp");
     GLuint fullBricks = Scene::GetTexture("tBricks3.bmp");

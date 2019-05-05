@@ -10,7 +10,8 @@ public:
     //~House();
     
     void Display();
-    
+    void DrawRightWindow();
+    void DrawLeftWindow();
 private:
     GLuint _texFullBricks, _texRoof, _texDoor, _texWindow;
     

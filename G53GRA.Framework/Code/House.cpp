@@ -14,6 +14,8 @@ House::House(GLuint texFullBricks, GLuint texRoof, GLuint texDoor,GLuint texWind
 
 void House::Display()
 {
+    
+    float windowSize[2] = {30.f*1.25781,30.f}; //ratio of the window.bmp is 1:1.25781
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
     
@@ -119,7 +121,7 @@ void House::Display()
     
     glEnd();
     
-    
+    glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _texDoor);
     
     
@@ -139,33 +141,82 @@ void House::Display()
     glBindTexture(GL_TEXTURE_2D, 0);
     glDisable(GL_TEXTURE_2D);
     
+    
+    
+    
+    
+    
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, _texWindow);
+    
+    //right windows
+    
+    //right window 1
+    glPushMatrix();
+    glTranslatef(111.5f, 40.f, -60.f); //adjust size so that they are symmetrical
+    glScalef(windowSize[0],windowSize[1], windowSize[1]);
+    DrawRightWindow();
+    glPopMatrix();
+    
+    //right window 2
+    glPushMatrix();
+    glTranslatef(111.5f, 40.f, -210.f); //adjust size so that they are symmetrical
+    glScalef(windowSize[0],windowSize[1], windowSize[1]);
+    DrawRightWindow();
+    glPopMatrix();
+    
+    
+    
+    //left windows
+    
+    //left window 1
+    glPushMatrix();
+    glTranslatef(-1.2f, 40.f, -60.f);  //adjust size so that they are symmetrical
+    glScalef(windowSize[0], windowSize[1], windowSize[1]);
+    DrawLeftWindow();
+    glPopMatrix();
+    
+    //left window 2
+    glPushMatrix();
+    glTranslatef(-1.2f, 40.f, -210.f);  //adjust size so that they are symmetrical
+    glScalef(windowSize[0], windowSize[1], windowSize[1]);
+    DrawLeftWindow();
+    glPopMatrix();
+    
+    glBindTexture(GL_TEXTURE_2D, 0);
+    glDisable(GL_TEXTURE_2D);
+    
     glPopAttrib();
     glPopMatrix();
 }
 
-/*void Cube::Update()
-{
-    
-    
-    //pos[0] = scale[0]*sin(_runtime);
-    //pos[1] = scale[1]*cos(_runtime);
-    
-    glEnable(GL_LIGHTING);
-    GLfloat position[4] = { -30.f, 50.f, 0.f, 1.0f};
-    glLightfv(GL_LIGHT1, GL_POSITION, position);
-    
-    GLfloat ambient1[3] = { 0.f, 0.f, 0.f};
-    GLfloat diffuse1[3] = { .715f, .715f, .715f};
-    GLfloat specular1[3] = {.715f, .715f,.715f};
-    
-    glLightfv(GL_LIGHT1, GL_AMBIENT, ambient1);
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse1);
-    glLightfv(GL_LIGHT1, GL_SPECULAR, specular1);
-    
-    glLightf(GL_LIGHT1, GL_CONSTANT_ATTENUATION, 0.f);
-    glLightf(GL_LIGHT1, GL_LINEAR_ATTENUATION, 0.01f);
-    glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.001f);
-    
-    glEnable(GL_LIGHT1);
+void House::DrawLeftWindow(){
+    glBegin(GL_QUADS);
+    {
+        //left windows
+        glNormal3f(-1.0f, 0.0f, 0.0f);
+        glTexCoord2f(0.f, 0.f); glVertex3f(0.f, 0.f, -1.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(0.f,0.f,0.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.f,1.f,0.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(0.f,1.f,-1.f);
+    }
+    glEnd();
 }
-*/
+
+void House::DrawRightWindow(){
+    glBegin(GL_QUADS);
+    {
+        
+        //right windows
+        glNormal3f(1.0f, 0.0f, 0.0f);
+        glTexCoord2f(0.f, 0.f); glVertex3f(1.f, 0.f, 0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(1.f,0.f,-1.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(1.f,1.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(1.f,1.f,0.f);
+        
+        
+        
+    }
+    
+    glEnd();
+}
