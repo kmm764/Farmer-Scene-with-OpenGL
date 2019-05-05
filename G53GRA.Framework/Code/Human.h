@@ -11,7 +11,7 @@ public:
     Human(GLuint tHoe);
     void Update(const double &deltaTime);
     void Display();
-    void DrawHuman();
+    void DrawHuman(float rNH = 0);
     void DrawBody();
     void DrawRightUpperLeg();
     void DrawLeftUpperLeg();
@@ -24,12 +24,13 @@ public:
     void DrawHead();
     void DrawCube();
     void DrawHoe();
-    void TurnBody();
+    void TurnBody(float rN = 0);
     void DrawCubeTex();
 private:
     double totalPositionAnimationTime =0;
     float DistanceTravelled= 0;
     float RotateTravelled =0;
+    float RotateS =0;
     float xBody,yBody, zBody, xArm, yArm,zArm, xHead, yHead, zHead ,xLeg, yLeg, zLeg,xHoe,yHoe,zHoe;
     float RotateSin = 0;
     GLuint _tHoe;

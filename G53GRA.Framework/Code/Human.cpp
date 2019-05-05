@@ -12,6 +12,7 @@ Human::Human(GLuint tHoe):_tHoe(tHoe) {
 }
 void Human::Display()
 {
+    
     //glPushAttrib(GL_ALL_ATTRIB_BITS);
     xBody = 15.f;
     yBody = 30.f;
@@ -39,12 +40,12 @@ void Human::Display()
     
     //first human in green top
     glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
-    DrawHuman();
+    DrawHuman(0);
     
     glTranslatef(150.f, 0.f, -200.f);
     //seconde human with blue top
     glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
-    DrawHuman();
+    DrawHuman(4);
     glPopMatrix();
     
     
@@ -54,21 +55,21 @@ void Human::Display()
     glTranslatef(-300.f,30.f,50.f);
     //third human with light blue top
     glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
-    DrawHuman();
+    DrawHuman(9);
     glPopMatrix();
     
     glPushMatrix();
     glTranslatef(-350.f,30.f,-350.f);
     //fourth human with
     glColor4f(0.2f, 0.5f, 1.0f, 1.0f);
-    DrawHuman();
+    DrawHuman(5);
     glPopMatrix();
     
     glPushMatrix();
     glTranslatef(-250.f,30.f,-150.f);
     //fifth human with green top
     glColor4f(0.2f, 0.5f, 0.0f, 1.0f);
-    DrawHuman();
+    DrawHuman(10);
     glPopMatrix();
     
     glPushMatrix();
@@ -76,12 +77,12 @@ void Human::Display()
     
     //sixth human in white top
     glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-    DrawHuman();
+    DrawHuman(3);
     
     glTranslatef(150.f, 0.f, -100.f);
     //seventh human with blue top
     glColor4f(1.0f, 0.05f, 0.0f, 1.0f);
-    DrawHuman();
+    DrawHuman(6);
     glPopMatrix();
     
     glEnable(GL_LIGHT1);
@@ -113,12 +114,17 @@ void Human::Update(const double &deltaTime)
     
     
 }
-
-void Human::DrawHuman()
+void Human::TurnBody(float rN)
+{
+    
+    RotateS = sin(RotateTravelled+rN)+1;
+    glRotatef(RotateS*20, 1.f, 0.f, 0.f);
+}
+void Human::DrawHuman(float rNH)
 {
     //body
     glPushMatrix();
-    TurnBody();
+    TurnBody(rNH);
     DrawBody();
     glPopMatrix();
     
@@ -126,7 +132,7 @@ void Human::DrawHuman()
     
     //draw LeftUpperArm and draw leftLowerArm
     glPushMatrix();
-    TurnBody();
+    TurnBody(rNH);
     
     DrawLeftUpperArm();
     DrawLeftLowerArm();
@@ -134,7 +140,7 @@ void Human::DrawHuman()
     
     //draw RightUpperArm and draw RightLowerArm
     glPushMatrix();
-    TurnBody();
+    TurnBody(rNH);
     DrawRightUpperArm();
     DrawRightLowerArm();
     DrawHoe();
@@ -163,7 +169,7 @@ void Human::DrawHuman()
     
     //head
     glPushMatrix();
-    TurnBody();
+    TurnBody(rNH);
     DrawHead();
     glPopMatrix();
     
@@ -207,7 +213,7 @@ void Human::DrawRightUpperArm()
 {
     glTranslatef(0.f,30.f,-3.f); //start from (0,0,0) from body
     glRotatef(180, 0, 0, 1);//rotate it 180 so that it render below the body
-    glRotatef(-RotateSin*40+90, 1.f, 0.f, 0.f);
+    glRotatef(-RotateS*40+90, 1.f, 0.f, 0.f);
     glPushMatrix();
     glScalef(xArm, yArm, zArm);
     
@@ -217,7 +223,7 @@ void Human::DrawRightUpperArm()
 void Human::DrawRightLowerArm()
 {
     glTranslatef(0.f,yArm,0.f);
-    glRotatef(-RotateSin*45+90, 1.f, 0.f, 0.f);
+    glRotatef(-RotateS*45+90, 1.f, 0.f, 0.f);
     
     glPushMatrix();
     glScalef(xArm, yArm, zArm);//rotate it 180 so that it render below the body
@@ -227,7 +233,7 @@ void Human::DrawRightLowerArm()
 void Human::DrawLeftUpperArm()
 {
     glTranslatef(xBody+xBody/3,30.f,-3.f); //start from (0,0,0) from body
-    glRotatef(RotateSin*10, 1.f, 0.f, 0.f);
+    glRotatef(RotateS*10, 1.f, 0.f, 0.f);
     glRotatef(180, 0, 0, 1); //rotate it 180 so that it render below the body
     glPushMatrix();
     glScalef(xArm, yArm, zArm);
@@ -237,7 +243,7 @@ void Human::DrawLeftUpperArm()
 void Human::DrawLeftLowerArm()
 {
     glTranslatef(0.f,yArm,0.f);//positive because of the 180 rotation
-    glRotatef(RotateSin*5, 1.f, 0.f, 0.f);
+    glRotatef(RotateS*5, 1.f, 0.f, 0.f);
     glScalef(xArm, yArm, zArm);
     DrawCube();
 }
@@ -277,10 +283,7 @@ void Human::DrawHoe()
     
 }
 
-void Human::TurnBody()
-{
-    glRotatef(RotateSin*20, 1.f, 0.f, 0.f);
-}
+
 
 void Human::DrawCube()
 {
