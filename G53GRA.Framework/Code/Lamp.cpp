@@ -35,7 +35,7 @@ void Lamp::Update(const double &deltaTime)// use time for animation
 void Lamp::DrawWholeLamp()
 {
     float rotationChain = RotateSin*10; //rotation variable for the chain
-    float rotationLamp = RotateSin*20; //rotation variable for the lamp
+    float rotationLamp = RotateSin*25; //rotation variable for the lamp
     glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the lamp glow
     
     GLfloat position1[4] = { 30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp
@@ -60,9 +60,11 @@ void Lamp::DrawWholeLamp()
     
     glPopMatrix();//pop the scale
     
-    glTranslatef(-3.3f, 10.f, 3.3f); //move the rope to the middle of the lamp
-    glRotatef(rotationLamp, 1.f, 0.f, 0.f); //bottom part swing animation
+    
+    glTranslatef(-3.3f, 9.5f, -0.7f); //move the rope to the middle of the lamp
+    glRotatef(rotationLamp, 1.f, 0.f, 0.f);//bottom part swing animation
     glPushMatrix();
+    glTranslated(0.f, 0.f, 4.f);
     glScalef(7.9f, 16.6f, 7.9f); //scale the lamp
     DrawLamp();
     
