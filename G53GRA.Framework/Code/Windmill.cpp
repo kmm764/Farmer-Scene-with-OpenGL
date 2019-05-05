@@ -16,6 +16,7 @@ void Windmill::Display(){
     float yMiddle = 250;
     float yTop = 50;
     
+    
     glPushMatrix();
     glTranslatef(-300.f,0.f,-450.f);
     
@@ -64,22 +65,54 @@ void Windmill::Display(){
     DrawCube(3); //3 is the wood texture
     glPopMatrix();
     
-    /*glPushMatrix();
-    glTranslatef(70.f, -45.f, 50.f);
-    
-    glScalef(10.f, 55.f, 10.f);
-    DrawCube(5);
-    glPopMatrix();*/
-    
-    
+    //blade 1
+    glPushMatrix();
+    glRotatef(RotateTravelled*10, 0.f, 0.f, 1.f);
+    DrawBlade();
     glPopMatrix();
     
+    //blade 2
+    glPushMatrix();
+    glRotatef(RotateTravelled*10+90, 0.f, 0.f, 1.f);
+    DrawBlade();
+    glPopMatrix();
+    
+    
+    //blade 3
+    glPushMatrix();
+    glRotatef(RotateTravelled*10+180, 0.f, 0.f, 1.f);
+    DrawBlade();
+    glPopMatrix();
+    
+    //blade 4
+    glPushMatrix();
+    glRotatef(RotateTravelled*10+270, 0.f, 0.f, 1.f);
+    DrawBlade();
+    glPopMatrix();
+    
+    glPopMatrix();
     glPopMatrix();
 }
 
 void Windmill::Update(const double &deltaTime){
     RotateTravelled += deltaTime*1;
     RotateSin = sin(RotateTravelled);// make sure the number loops between negative and positive
+}
+
+void Windmill::DrawBlade(){
+    
+    float wood2Size[3] = {5.f,30.f,5.f};
+    float bladeSize[3] = {25.f,100.f,wood2Size[2]};
+    
+    glTranslatef(-wood2Size[0]/2, -wood2Size[2]/2, 50.f);
+    
+    glPushMatrix();
+    glScalef(wood2Size[0], wood2Size[1], wood2Size[2]);
+    DrawCube(3);
+    glPopMatrix();
+    glTranslatef((wood2Size[0]-bladeSize[0])/2, wood2Size[1], 0.f);
+    glScalef(bladeSize[0],bladeSize[1],bladeSize[2]);
+    DrawCube(5);
 }
 
 void Windmill::DrawTriangle(){
@@ -148,7 +181,6 @@ void Windmill::DrawRoof(){
     
 }
 
-void Windmill::DrawBlade(){}
 
 void Windmill::DrawCube(int x){
     unsigned char tex; //experimenting with switch, makes coding more efficient
