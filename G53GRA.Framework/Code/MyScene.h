@@ -13,5 +13,5 @@ public:
 private:
 	void Initialise();
 	void Projection();
-    void GlobalLight(float x,float y,float z);
+    void GlobalLight(float x,float y,float z); //for Light0
 };

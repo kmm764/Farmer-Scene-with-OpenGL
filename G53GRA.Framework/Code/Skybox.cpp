@@ -8,19 +8,15 @@ _tTop(tTop), _tBottom(tBottom), _tLeft(tLeft), _tRight(tRight), _tFront(tFront),
 
 }
 
-//Skybox::~Skybox()
-//{
 
-//}
-
-void Skybox::Display()
+void Skybox::Display() //display the skybox
 {
     
-    glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the lamp glow
+    glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the skybox glow
     
-    GLfloat position1[4] = { 30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp
+    GLfloat position1[4] = { 30.f, 0.f, 0.f, 1.0f}; //move the light source next to the skybox
     glLightfv(GL_LIGHT2, GL_POSITION, position1);
-    GLfloat ambient2[3] = { 0.8f, 0.8f, 0.8f}; //ambient on the lamp to make a glow effect
+    GLfloat ambient2[3] = { 0.8f, 0.8f, 0.8f}; //ambient on the skybox to make a glow effect
     glLightfv(GL_LIGHT2, GL_AMBIENT, ambient2); //only ambient matters here
     glEnable(GL_LIGHT2);
     
@@ -28,11 +24,11 @@ void Skybox::Display()
     
     
 	glPushMatrix();
-	//glPushAttrib(GL_ALL_ATTRIB_BITS);
-    glColor4f(1.f, 1.f, 1.f,1.f);
-    glTranslatef(-1000.f, 0.f, -1000.f);
-    glScalef(2000.f, 2000.f, 2000.f);
-    //Back
+    glColor4f(1.f, 1.f, 1.f,1.f);//set the box to white, making sure the texture won't be colored
+    glTranslatef(-1000.f, 0.f, -1000.f); //move the box to the middle
+    glScalef(2000.f, 2000.f, 2000.f); //scale the box to this size
+    
+    //Back of the skybox, drawing one plane out facing the camera
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _tBack);
     glBegin(GL_QUADS);
@@ -99,14 +95,14 @@ void Skybox::Display()
     glPushMatrix();
     glTranslatef(0.f, 1000.f, 0.f);
     glScalef(1000.f, 1000.f, 1000.f);
-    const float TESS_AMT = 25.0f;
+    const float TESS_AMT = 25.0f; //seperating the ground into small Quads, so that the light will have an effect on the ground
     float square = 1.0f / TESS_AMT;
     
-    glNormal3f(0.0f, 1.0f, 0.0f);
-    glEnable(GL_TEXTURE_2D);
+    glNormal3f(0.0f, 1.0f, 0.0f); //normal facing upwards, for light
+    glEnable(GL_TEXTURE_2D); //start applying texture
     glBindTexture(GL_TEXTURE_2D, _tBottom);
     
-    
+    //use a forloop to put all the small quads together forming the ground of the skybox
     for (float x = -1.0f; x < 1.0f; x += square)
     {
         for (float y = -1.0f; y < 1.0f; y += square)
@@ -126,6 +122,6 @@ void Skybox::Display()
     glBindTexture(GL_TEXTURE_2D, 0);
     glDisable(GL_TEXTURE_2D);
     glPopMatrix();
-	//glPopAttrib();
+	
 	
 }

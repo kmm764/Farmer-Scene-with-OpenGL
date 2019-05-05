@@ -7,14 +7,14 @@
 //
 
 #include "Lamp.h"
-#include<cmath>
+#include<cmath>  //for sin
 Lamp::Lamp(GLuint tLamp, GLuint tChain):_tLamp(tLamp),_tChain(tChain) {
 }
 void Lamp::Display()
 {
-    //glPushAttrib(GL_ALL_ATTRIB_BITS);
+    
     glPushMatrix();
-    glTranslatef(180.f,80.1f,60.f);
+    glTranslatef(180.f,80.1f,60.f); //move the lamp before draw
     DrawWholeLamp();
     
     glPopMatrix();
@@ -23,7 +23,7 @@ void Lamp::Display()
     
 }
 
-void Lamp::Update(const double &deltaTime)
+void Lamp::Update(const double &deltaTime)// use time for animation
 {
     
     DistanceTravelled +=deltaTime*100;
@@ -31,10 +31,11 @@ void Lamp::Update(const double &deltaTime)
     RotateSin = sin(RotateTravelled);// make sure the number loops between negative and positive
     
 }
+//draw the whole lamp with Two cube parts with texture, the chain and the lamp linked to it
 void Lamp::DrawWholeLamp()
 {
-    float rotationChain = RotateSin*10;
-    float rotationLamp = RotateSin*20;
+    float rotationChain = RotateSin*10; //rotation variable for the chain
+    float rotationLamp = RotateSin*20; //rotation variable for the lamp
     glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the lamp glow
     
     GLfloat position1[4] = { 30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp
@@ -44,14 +45,14 @@ void Lamp::DrawWholeLamp()
     glEnable(GL_LIGHT2);
     
     glColor4f(1.f, 1.f, 1.f, 1.f);
-    glDisable(GL_LIGHT1);
+    glDisable(GL_LIGHT1); //disable light before drawing
     
     
     glRotatef(180.f, 0.f, 0.f, 1.f);//make the lamp face downwards
     
 
     glPushMatrix();
-    glRotatef(rotationChain, 1.f, 0.f, 0.f);
+    glRotatef(rotationChain, 1.f, 0.f, 0.f); //chain swing animation
     
     glPushMatrix();
     glScalef(1.5f, 10.f, 1.5f);
@@ -60,7 +61,7 @@ void Lamp::DrawWholeLamp()
     glPopMatrix();//pop the scale
     
     glTranslatef(-3.3f, 10.f, 3.3f); //move the rope to the middle of the lamp
-    glRotatef(rotationLamp, 1.f, 0.f, 0.f);
+    glRotatef(rotationLamp, 1.f, 0.f, 0.f); //bottom part swing animation
     glPushMatrix();
     glScalef(7.9f, 16.6f, 7.9f); //scale the lamp
     DrawLamp();
@@ -68,14 +69,15 @@ void Lamp::DrawWholeLamp()
     glPopMatrix();
     glPopAttrib(); //to make only the lamp glow
     glPopMatrix();
+    
     //lighting from the lamp to nearby objects
     glEnable(GL_LIGHT1);
     
-    GLfloat position[4] = { 0.f, -20.f, (rotationLamp+rotationChain), 1.0f};
+    GLfloat position[4] = { 0.f, -20.f, (rotationLamp+rotationChain), 1.0f}; //the light source
     glLightfv(GL_LIGHT1, GL_POSITION, position);
     
     GLfloat ambient1[3] = { 0.f, 0.f, 0.f};
-    GLfloat diffuse1[3] = { .715f, .715f, .715f};
+    GLfloat diffuse1[3] = { .715f, .715f, .715f}; //white light
     GLfloat specular1[3] = {.715f, .715f,.715f};
     
     glLightfv(GL_LIGHT1, GL_AMBIENT, ambient1);
@@ -84,12 +86,12 @@ void Lamp::DrawWholeLamp()
     
     glLightf(GL_LIGHT1, GL_CONSTANT_ATTENUATION, 0.f);
     glLightf(GL_LIGHT1, GL_LINEAR_ATTENUATION, 0.001f);
-    glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.00008f);
+    glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.00008f);//adjusted to a reasonable light intensity
     
     //
 }
 
-void Lamp::DrawChain()
+void Lamp::DrawChain() //class to draw the chain with texture
 {
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _tChain);
@@ -151,7 +153,8 @@ void Lamp::DrawChain()
     
 }
 
-void Lamp::DrawLamp(){
+void Lamp::DrawLamp() //class to draw the lamp part with texture
+{
     
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _tLamp);

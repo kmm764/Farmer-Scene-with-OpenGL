@@ -16,11 +16,10 @@ void MyScene::Initialise()
 {
     glEnable(GL_LIGHT1);
 	glClearColor(0.f, 0.f, 0.f, 1.0f);
-    GlobalLight(0.01f,0.01f,0.01f);
+    GlobalLight(0.01f,0.01f,0.01f);// using 0.01f for dim effect for my night scene
     
 
-    //aaaa
-    
+    //-----------------------------------Texture-----------------------------------
     GLuint ft = Scene::GetTexture("stars.bmp"); //give options to change it to other bmp
     GLuint bk = Scene::GetTexture("stars.bmp"); //but decided on using only star.bmp for skybox
     GLuint lf = Scene::GetTexture("grass2.bmp");
@@ -41,19 +40,17 @@ void MyScene::Initialise()
     GLuint tTop = Scene::GetTexture("tRoof.bmp");
     GLuint tRoof = Scene::GetTexture("brownRoof.bmp");
     GLuint tBlade = Scene::GetTexture("tblade2.bmp");
-   
     GLuint tHoe = Scene::GetTexture("tRoof.bmp");
     
-    House *house = new House(fullBricks,roof,door,tWindow);
-    //cube->size(1000.0f, 1000.0f, 1000.0f);
+    
+    
+    //-------------------------------add to displayableobject-----------------------------
+    
+    House *house = new House(fullBricks,roof,door,tWindow);//add texture to the class
     AddObjectToScene(house);
     
-    
     Skybox *skybox = new Skybox(up,dn,lf,rt,ft,bk);
-    //skybox->size(10000.0f, 1000.0f, 10000.0f);
     AddObjectToScene(skybox);
-    
-    
     
     Human *human = new Human(tHoe);
     AddObjectToScene(human);
@@ -75,7 +72,7 @@ void MyScene::Projection()
 	gluPerspective(60.0, aspect, 1.0, 30000.0);
 }
 
-void MyScene::GlobalLight(float x,float y,float z)
+void MyScene::GlobalLight(float x,float y,float z) //set globallight , creating a dim effect for my night scene
 {
     //ambient light
     GLfloat ambient[3] = { x, y, z};

@@ -7,9 +7,8 @@ class Skybox :
 {
 public:
     
-    //Skybox();
 	Skybox(GLuint tTop, GLuint tBottom, GLuint tLeft, GLuint tRight, GLuint tFront, GLuint tBack);
-	//~Skybox();
+	
 
 	void Display();
 

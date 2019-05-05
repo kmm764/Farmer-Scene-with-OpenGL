@@ -10,10 +10,9 @@
 #include<cmath>
 Human::Human(GLuint tHoe):_tHoe(tHoe) {
 }
-void Human::Display()
+void Human::Display() //display the human
 {
-    
-    //glPushAttrib(GL_ALL_ATTRIB_BITS);
+//----------------------variables----------------------
     xBody = 15.f;
     yBody = 30.f;
     zBody = 10.f;
@@ -30,7 +29,7 @@ void Human::Display()
     yHoe = 3;
     zHoe = 70;
     
-    //draw human
+//----------------------draw human----------------------
     glPushMatrix();
     glTranslatef(300.f,30.f,50.f);
     //glEnable(GL_LIGHT1);
@@ -40,15 +39,13 @@ void Human::Display()
     
     //first human in green top
     glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
-    DrawHuman(0);
+    DrawHuman(0); //asign a number to it, so that the won't have identical movement at the same time
     
-    glTranslatef(150.f, 0.f, -200.f);
+    glTranslatef(150.f, 0.f, -200.f); //create another human somewhere else
     //seconde human with blue top
     glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
     DrawHuman(4);
     glPopMatrix();
-    
-    
     
     
     glPushMatrix();
@@ -86,45 +83,30 @@ void Human::Display()
     glPopMatrix();
     
     glEnable(GL_LIGHT1);
-    //glPopAttrib();
-    /*
-    GLfloat position[4] = { -10.f, 0.f, 0.f, 1.0f};
-    glLightfv(GL_LIGHT1, GL_POSITION, position);
     
-    GLfloat ambient1[3] = { 0.f, 0.f, 0.f};
-    GLfloat diffuse1[3] = { .715f, .715f, .715f};
-    GLfloat specular1[3] = {.715f, .715f,.715f};
-    
-    glLightfv(GL_LIGHT1, GL_AMBIENT, ambient1);
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse1);
-    glLightfv(GL_LIGHT1, GL_SPECULAR, specular1);
-    
-    glLightf(GL_LIGHT1, GL_CONSTANT_ATTENUATION, 0.f);
-    glLightf(GL_LIGHT1, GL_LINEAR_ATTENUATION, 0.001f);
-    glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.0001f);*/
 }
-
+//-----------------------Update---------------------------
 void Human::Update(const double &deltaTime)
 {
     
-    DistanceTravelled +=deltaTime*100;
+    DistanceTravelled +=deltaTime*100; //use time to make animation
     RotateTravelled += deltaTime*1;
-    RotateSin = sin(RotateTravelled)+1;
+    RotateSin = sin(RotateTravelled)+1; //use sin to create a loop movement
     
     
     
 }
-void Human::TurnBody(float rN)
+void Human::TurnBody(float rN) //import a float to create different movement order for humans
 {
     
-    RotateS = sin(RotateTravelled+rN)+1;
-    glRotatef(RotateS*20, 1.f, 0.f, 0.f);
+    RotateS = sin(RotateTravelled+rN)+1; //make sure human's starting movement is not the same
+    glRotatef(RotateS*20, 1.f, 0.f, 0.f); //use sin to create a loop movement
 }
 void Human::DrawHuman(float rNH)
 {
     //body
     glPushMatrix();
-    TurnBody(rNH);
+    TurnBody(rNH); //pass the number to the turning class
     DrawBody();
     glPopMatrix();
     
@@ -174,7 +156,7 @@ void Human::DrawHuman(float rNH)
     glPopMatrix();
     
 }
-void Human::DrawBody()
+void Human::DrawBody() //well, draw body
 {
     
     glScalef(xBody,yBody, zBody);
@@ -223,7 +205,7 @@ void Human::DrawRightUpperArm()
 void Human::DrawRightLowerArm()
 {
     glTranslatef(0.f,yArm,0.f);
-    glRotatef(-RotateS*45+90, 1.f, 0.f, 0.f);
+    glRotatef(-RotateS*45+90, 1.f, 0.f, 0.f); //rotate the right lower arm
     
     glPushMatrix();
     glScalef(xArm, yArm, zArm);//rotate it 180 so that it render below the body
@@ -250,7 +232,7 @@ void Human::DrawLeftLowerArm()
 void Human::DrawHead()
 {
     glColor3f(1.f, 0.764f, 0.666f);
-    glTranslatef(xBody/2-xHead/2, yBody+0.01f, 0.f);
+    glTranslatef(xBody/2-xHead/2, yBody+0.01f, 0.f); //move the head to the middle,above the body
     glPushMatrix();
     glScalef(xHead, yHead, zHead);
     DrawCube();
@@ -258,7 +240,7 @@ void Human::DrawHead()
     
     //add hair
     glPushMatrix();
-    glColor3f(0.f, 0.f, 0.f);
+    glColor3f(0.f, 0.f, 0.f); //add black hair
     glTranslatef(0.f, yHead, 0.f);
     glScalef(xHead, yHead/4, zHead);
     DrawCube();
@@ -272,10 +254,10 @@ void Human::DrawHoe()
     glTranslatef(0.5f, yArm, zHoe*3/4); //where the right hand is holding the hoe
     glPushMatrix();
     glScalef(xHoe,yHoe,zHoe);
-    DrawCubeTex(); //add texture to the hoe
+    DrawCubeTex(); //add wood texture to the hoe
     //draw hoe head
     glPopMatrix();
-    glColor4f(0.79f, 0.79f, 0.79f, 1.0f);
+    glColor4f(0.79f, 0.79f, 0.79f, 1.0f); //make a metal color to the top of the hoe
     //glTranslatef(0.f, 0.f, zHoe);
     glScalef(3, 20, 2);
     DrawCube();
@@ -284,7 +266,7 @@ void Human::DrawHoe()
 }
 
 
-
+//use this class to draw out all the cubes needed by the drawHuman class
 void Human::DrawCube()
 {
     glBegin(GL_QUADS);
@@ -335,6 +317,8 @@ void Human::DrawCube()
     
     glEnd();
 }
+
+//Draw cube that needed texture, only the hoe in this class
 void Human::DrawCubeTex()
 {
     glEnable(GL_TEXTURE_2D);

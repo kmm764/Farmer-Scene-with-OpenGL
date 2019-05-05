@@ -4,7 +4,7 @@
 
 class Moon:
 
-public DisplayableObject
+public DisplayableObject //include displayable object
 
 {
 public:
@@ -12,12 +12,11 @@ public:
     
     void Display();
     void DrawMoon();
-    void Update(const double &deltaTime);
+    
     
 private:
     GLuint _tMoon;
-    float moonTime = 0;
-    float moonSin = 0;
+    
     
     
     
