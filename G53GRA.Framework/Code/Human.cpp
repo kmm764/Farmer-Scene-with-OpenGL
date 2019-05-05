@@ -8,6 +8,8 @@
 
 #include "Human.h"
 #include<cmath>
+Human::Human(GLuint tHoe):_tHoe(tHoe) {
+}
 void Human::Display()
 {
     //glPushAttrib(GL_ALL_ATTRIB_BITS);
@@ -27,7 +29,7 @@ void Human::Display()
     yHoe = 3;
     zHoe = 70;
     
-    
+    //draw human
     glPushMatrix();
     glTranslatef(300.f,30.f,50.f);
     //glEnable(GL_LIGHT1);
@@ -35,11 +37,12 @@ void Human::Display()
     //glRotatef( RotateTravelled, 0, 0, 1);
      //scale the body
     
-    
+    //first human in green top
     glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
     DrawHuman();
     
     glTranslatef(150.f, 0.f, -200.f);
+    //seconde human with blue top
     glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
     DrawHuman();
     glPopMatrix();
@@ -48,11 +51,39 @@ void Human::Display()
     
     
     glPushMatrix();
-    glTranslatef(-300.f,30.f,150.f);
-    
-    glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
+    glTranslatef(-300.f,30.f,50.f);
+    //third human with light blue top
+    glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
     DrawHuman();
     glPopMatrix();
+    
+    glPushMatrix();
+    glTranslatef(-350.f,30.f,-350.f);
+    //fourth human with
+    glColor4f(0.2f, 0.5f, 1.0f, 1.0f);
+    DrawHuman();
+    glPopMatrix();
+    
+    glPushMatrix();
+    glTranslatef(-250.f,30.f,-150.f);
+    //fifth human with green top
+    glColor4f(0.2f, 0.5f, 0.0f, 1.0f);
+    DrawHuman();
+    glPopMatrix();
+    
+    glPushMatrix();
+    glTranslatef(300.f,30.f,-350.f);
+    
+    //sixth human in white top
+    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    DrawHuman();
+    
+    glTranslatef(150.f, 0.f, -100.f);
+    //seventh human with blue top
+    glColor4f(1.0f, 0.05f, 0.0f, 1.0f);
+    DrawHuman();
+    glPopMatrix();
+    
     glEnable(GL_LIGHT1);
     //glPopAttrib();
     /*
@@ -109,6 +140,7 @@ void Human::DrawHuman()
     DrawHoe();
     glPopMatrix();
     
+    glColor4f(.396f, 0.263f, 0.129f, 1.0f); //39.6% red, 26.3% green and 12.9%
     //left upper leg
     glPushMatrix();
     DrawLeftUpperLeg();
@@ -230,13 +262,14 @@ void Human::DrawHead()
 }
 void Human::DrawHoe()
 {
-    glColor3f(0.70f, 0.25f, 0.25f);
+    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     glTranslatef(0.5f, yArm, zHoe*3/4); //where the right hand is holding the hoe
     glPushMatrix();
     glScalef(xHoe,yHoe,zHoe);
-    DrawCube();
+    DrawCubeTex(); //add texture to the hoe
     //draw hoe head
     glPopMatrix();
+    glColor4f(0.79f, 0.79f, 0.79f, 1.0f);
     //glTranslatef(0.f, 0.f, zHoe);
     glScalef(3, 20, 2);
     DrawCube();
@@ -298,5 +331,60 @@ void Human::DrawCube()
     
     
     glEnd();
+}
+void Human::DrawCubeTex()
+{
+    glEnable(GL_TEXTURE_2D);
+    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    
+    glBindTexture(GL_TEXTURE_2D, _tHoe);
+    
+    glBegin(GL_QUADS);
+    {
+        //front body
+        glNormal3f(0.f, 0.f, 1.f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f, 0.f, 0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(1.f,0.f,0.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(1.f,1.f,0.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(0.f, 1.f, 0.f);
+        
+        //back body
+        glNormal3f(0.f, 0.f, -1.f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(1.f, 0.f, -1.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(0.f,0.f,-1.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.f,1.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(1.f, 1.f, -1.f);
+        
+        //right body
+        glNormal3f(1.f, 0.f, 0.f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(1.f, 0.f, 0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(1.f,0.f,-1.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(1.f,1.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(1.f,1.f,0.f);
+        //left body
+        glNormal3f(-1.f, 0.f, 0.f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f,0.f,-1.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(0.f,0.f,0.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.f,1.f,0.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(0.f, 1.f, -1.f);
+        
+        //top body
+        glNormal3f(0.f, 1.f, 0.f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f,1.f,0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(1.f,1.f,0.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(1.f,1.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(0.f, 1.f, -1.f);
+        //bottom body
+        glNormal3f(0.f, -1.f, 0.f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f,0.f,0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(0.f,0.f,-1.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(1.f,0.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(1.f, 0.f, 0.f);
+    }
+    
+    glEnd();
+    
+    glDisable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D,0);
 }
 

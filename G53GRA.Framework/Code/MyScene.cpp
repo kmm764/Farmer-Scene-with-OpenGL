@@ -42,6 +42,7 @@ void MyScene::Initialise()
     GLuint tRoof = Scene::GetTexture("brownRoof.bmp");
     GLuint tBlade = Scene::GetTexture("tblade2.bmp");
    
+    GLuint tHoe = Scene::GetTexture("tRoof.bmp");
     
     House *house = new House(fullBricks,roof,door,tWindow);
     //cube->size(1000.0f, 1000.0f, 1000.0f);
@@ -54,7 +55,7 @@ void MyScene::Initialise()
     
     
     
-    Human *human = new Human();
+    Human *human = new Human(tHoe);
     AddObjectToScene(human);
     
     Lamp *lamp= new Lamp(tLamp,tChain);
