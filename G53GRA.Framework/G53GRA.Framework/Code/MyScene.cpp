@@ -39,7 +39,7 @@ void MyScene::Initialise()
     GLuint tBase = Scene::GetTexture("tBricks.bmp");
     GLuint tMiddle = Scene::GetTexture("tTop.bmp");
     GLuint tTop = Scene::GetTexture("tTop.bmp");
-    GLuint tRoof = Scene::GetTexture("tMoon.bmp");
+    GLuint tRoof = Scene::GetTexture("brownRoof.bmp");
     GLuint tBlade = Scene::GetTexture("tMoon.bmp");
    
     

@@ -30,21 +30,74 @@ void Windmill::Display(){
     DrawCube(3); //2 is drawing the middle part
     glPopMatrix();
     
-    /*glTranslatef(0.f,yMiddle,0.f);
+    glTranslatef(0.f,yMiddle,0.f);
     
     glPushMatrix();
     glScalef(150, yTop, 150);
-    DrawCube(3); //2 is drawing the middle part
-    glPopMatrix();*/
+    DrawTriangle();
+    DrawRoof();
+    glPopMatrix();
     
     glPopMatrix();
 }
 
 void Windmill::Update(const double &deltaTime){}
 
-void Windmill::DrawTriangle(){}
+void Windmill::DrawTriangle(){
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, _tTop);
+    glColor4f(1.f, 1.f, 1.f, 1.f);
+    glBegin(GL_TRIANGLES);
+    {
+        //front triangle of the house
+        glNormal3f(0.0f, 0.0f, 1.0f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f, 0.f, 0.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(1.f,0.f,0.f);
+        glTexCoord2f(2.f, 0.f);glVertex3f(0.5f,1.f,0.f);//1 and 1 to make the texture same as
+        
+        //back triangle of the house
+        glNormal3f(0.0f, 0.0f, -1.0f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(1.f, 0.f, -1.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.f,0.f,-1.f);
+        glTexCoord2f(2.f, 0.f);glVertex3f(0.5f,1.f,-1.f);
+    }
+    glEnd();
+    glBindTexture(GL_TEXTURE_2D, 0);
+    glDisable(GL_TEXTURE_2D);
+}
 
-void Windmill::DrawRoof(){}
+void Windmill::DrawRoof(){
+    
+    
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, _tRoof);
+    glColor4f(1.f, 1.f, 1.f, 1.f);
+    glBegin(GL_QUADS);
+    {
+        //right roof
+        glNormal3f(1.0f, 0.0f, 0.0f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(1.f, 0.f, 0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(1.f,0.f,-1.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.5f,1.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(0.5f,1.f,0.f);
+        
+        //left roof
+        /*glNormal3f(0.0f, 0.0f, -1.0f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(1.f, 0.f, -1.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.f,0.f,-1.f);
+        glTexCoord2f(2.f, 0.f);glVertex3f(0.5f,1.f,-1.f);*/
+        glNormal3f(-1.0f, 0.0f, 1.0f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f, 0.f, -1.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(0.f,0.f, 0.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.5f,1.f,0.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(0.5f,1.f,-1.f);
+        
+    }
+    glEnd();
+    glBindTexture(GL_TEXTURE_2D, 0);
+    glDisable(GL_TEXTURE_2D);
+    
+}
 
 void Windmill::DrawBlade(){}
 
