@@ -102,7 +102,7 @@ void Windmill::Update(const double &deltaTime){
         
     }
     else if (yKey){ //speed up the windmill if hold y down
-        RotateTravelled += deltaTime*3;
+        RotateTravelled += deltaTime*10;
     }
     else{ //move the windmill at speed 1 if no key pressed
         RotateTravelled += deltaTime*1;

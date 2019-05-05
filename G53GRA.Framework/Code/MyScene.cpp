@@ -40,7 +40,7 @@ void MyScene::Initialise()
     GLuint tMiddle = Scene::GetTexture("tTop.bmp");
     GLuint tTop = Scene::GetTexture("tRoof.bmp");
     GLuint tRoof = Scene::GetTexture("brownRoof.bmp");
-    GLuint tBlade = Scene::GetTexture("tMoon.bmp");
+    GLuint tBlade = Scene::GetTexture("tblade2.bmp");
    
     
     House *house = new House(fullBricks,roof,door,tWindow);

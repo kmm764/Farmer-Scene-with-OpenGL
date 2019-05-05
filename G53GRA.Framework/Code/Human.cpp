@@ -43,6 +43,16 @@ void Human::Display()
     glColor4f(0.0f, 0.0f, 1.0f, 1.0f);
     DrawHuman();
     glPopMatrix();
+    
+    
+    
+    
+    glPushMatrix();
+    glTranslatef(-300.f,30.f,150.f);
+    
+    glColor4f(0.0f, 1.0f, 0.0f, 1.0f);
+    DrawHuman();
+    glPopMatrix();
     glEnable(GL_LIGHT1);
     //glPopAttrib();
     /*
