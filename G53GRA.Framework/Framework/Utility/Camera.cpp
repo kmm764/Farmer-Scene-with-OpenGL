@@ -8,7 +8,7 @@ Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), pKey(0), currentButton(0)
 }
 
 void Camera::Reset(){
-	// set the camera position to start at (0,0,0)
+	// reseted the default reset location, to start with a better viewing
 	eyePosition[0] = 600.0f;
 	eyePosition[1] = 100.0f;
 	eyePosition[2] = -300+0.5f * static_cast<float>(Scene::GetWindowHeight()) / static_cast<float>(tan(M_PI / 6.0));//0.0f;
@@ -35,7 +35,7 @@ void Camera::Reset(){
 }
 
 void Camera::Reset2(){
-    // set the camera position to start at (0,0,0)
+    // the second camera position showing a different angle of the scene
     eyePosition[0] = -600.0f;
     eyePosition[1] = 600.0f;
     eyePosition[2] = 100+0.5f * static_cast<float>(Scene::GetWindowHeight()) / static_cast<float>(tan(M_PI / 6.0));//0.0f;
@@ -176,7 +176,7 @@ void Camera::HandleKey(unsigned char key, int state, int x, int y)
             break;
             
         case 'm':
-            mKey = state;
+            mKey = state;//add m for increase camera movement speed
             break;
         
 		case ' ':

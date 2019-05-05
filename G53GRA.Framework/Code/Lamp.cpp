@@ -35,7 +35,7 @@ void Lamp::Update(const double &deltaTime)// use time for animation
 void Lamp::DrawWholeLamp()
 {
     float rotationChain = RotateSin*10; //rotation variable for the chain
-    float rotationLamp = RotateSin*25; //rotation variable for the lamp
+    float rotationLamp = RotateSin*20; //rotation variable for the lamp
     glPushAttrib(GL_ALL_ATTRIB_BITS);//push attrib to make sure only the lamp glow
     
     GLfloat position1[4] = { 30.f, 0.f, 0.f, 1.0f}; //move the light source next to the lamp

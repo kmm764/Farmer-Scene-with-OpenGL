@@ -24,7 +24,6 @@
 		48F9AC0B227CAEDA0054F222 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC09227CAEDA0054F222 /* House.cpp */; };
 		48F9AC0E227CE4560054F222 /* bricks.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC0D227CE3610054F222 /* bricks.bmp */; };
 		48F9AC11227CE85C0054F222 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC0F227CE85C0054F222 /* Human.cpp */; };
-		48F9AC15227DD28B0054F222 /* roof.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC14227DD27B0054F222 /* roof.bmp */; };
 		48F9AC17227DD81A0054F222 /* door.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC16227DD8140054F222 /* door.bmp */; };
 		48F9AC19227DD9E80054F222 /* window.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC18227DD9E00054F222 /* window.bmp */; };
 		48F9AC3F227DE7A10054F222 /* grass.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC1A227DE5C10054F222 /* grass.bmp */; };
@@ -71,7 +70,6 @@
 				48F9AC3F227DE7A10054F222 /* grass.bmp in CopyFiles */,
 				48F9AC19227DD9E80054F222 /* window.bmp in CopyFiles */,
 				48F9AC17227DD81A0054F222 /* door.bmp in CopyFiles */,
-				48F9AC15227DD28B0054F222 /* roof.bmp in CopyFiles */,
 				48F9AC0E227CE4560054F222 /* bricks.bmp in CopyFiles */,
 				48F9ABF8227C671F0054F222 /* stars.bmp in CopyFiles */,
 			);
@@ -109,7 +107,6 @@
 		48F9AC0D227CE3610054F222 /* bricks.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bricks.bmp; path = Textures/bricks.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC0F227CE85C0054F222 /* Human.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Human.cpp; path = Code/Human.cpp; sourceTree = SOURCE_ROOT; };
 		48F9AC10227CE85C0054F222 /* Human.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Human.h; path = Code/Human.h; sourceTree = SOURCE_ROOT; };
-		48F9AC14227DD27B0054F222 /* roof.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = roof.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC16227DD8140054F222 /* door.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = door.bmp; path = Textures/door.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC18227DD9E00054F222 /* window.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = window.bmp; path = Textures/window.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC1A227DE5C10054F222 /* grass.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = grass.bmp; path = G53GRA.Framework/grass.bmp; sourceTree = SOURCE_ROOT; };
@@ -270,7 +267,6 @@
 				48F9AC1A227DE5C10054F222 /* grass.bmp */,
 				48F9AC18227DD9E00054F222 /* window.bmp */,
 				48F9AC16227DD8140054F222 /* door.bmp */,
-				48F9AC14227DD27B0054F222 /* roof.bmp */,
 				48F9AC0D227CE3610054F222 /* bricks.bmp */,
 				48685C52227C663F002256B8 /* stars.bmp */,
 			);
