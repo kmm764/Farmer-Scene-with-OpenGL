@@ -11,7 +11,7 @@
 
 House::House(GLuint texFullBricks, GLuint texRoof, GLuint texDoor,GLuint texWindow):_texFullBricks(texFullBricks),_texRoof(texRoof), _texDoor(texDoor), _texWindow(texWindow) {
 }
-
+//--------------------display---------------------
 void House::Display()
 {
     
@@ -30,8 +30,9 @@ void House::Display()
     glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     //front
    
-    //drawing house, the cube
+    //drawing house, the cube, using actual coordinates instead of scaling, because I was doing house first
     glBindTexture(GL_TEXTURE_2D, _texFullBricks);
+    //the base of the house
     glBegin(GL_QUADS);
     {
         //front
@@ -69,7 +70,7 @@ void House::Display()
     glBindTexture(GL_TEXTURE_2D, _texFullBricks);
     glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     
-    //build the triangle above cube
+    //build the two triangles above base
     glBegin(GL_TRIANGLES);
     {
         //front triangle of the house
@@ -121,6 +122,9 @@ void House::Display()
     
     glEnd();
     
+    
+    
+    //door with texture
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _texDoor);
     
@@ -149,7 +153,7 @@ void House::Display()
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _texWindow);
     
-    //right windows
+    //right windows with texture
     
     //right window 1
     glPushMatrix();
@@ -167,7 +171,7 @@ void House::Display()
     
     
     
-    //left windows
+    //left windows with textures
     
     //left window 1
     glPushMatrix();

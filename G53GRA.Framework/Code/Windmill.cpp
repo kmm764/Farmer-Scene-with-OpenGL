@@ -10,7 +10,7 @@
 #include<cmath>
 
 Windmill::Windmill(GLuint tBase, GLuint tMiddle, GLuint tTop, GLuint tRoof, GLuint tBlade): _tBase(tBase), _tMiddle(tMiddle), _tTop(tTop), _tRoof(tRoof), _tBlade(tBlade),uKey(0),yKey(0){}
-
+//------------------------------display----------------------------
 void Windmill::Display(){
     float yBase = 50;
     float yMiddle = 250;
@@ -19,7 +19,7 @@ void Windmill::Display(){
     int onBool = 1;
     
     glPushMatrix();
-    glTranslatef(-300.f,0.f,-450.f);
+    glTranslatef(-300.f,0.f,-450.f);//move to the position where i want to draw the windmill
     
     glPushMatrix();
     glScalef(150, yBase, 150);
@@ -37,19 +37,19 @@ void Windmill::Display(){
     
     glPushMatrix();
     glScalef(150, yTop, 150);
-    DrawTriangle();
+    DrawTriangle(); //the two triangles above the middle part
     glPopMatrix();
     
     glPushMatrix();
     glTranslatef(0, 0, 20);
     glScalef(150, yTop, 190);
-    DrawRoof();
+    DrawRoof(); //drawing the roof, with the z going out a bit
     glPopMatrix();
     
     glPushMatrix();
     glTranslatef(75.f, -50.f, 0.f);
     
-    //base wood
+    //base wood of the windshaft
     glPushMatrix();
     glTranslatef(-15.f, -15.f, 0.f);
     glRotatef(90, 1.f, 0.f, 0.f);
@@ -57,10 +57,10 @@ void Windmill::Display(){
     DrawCube(3);
     glPopMatrix();
     
+    //the windshaft
     glPushMatrix();
-    
-    glRotatef(RotateTravelled*10, 0.f, 0.f, 1.f);
-    glTranslatef(-5.f, -5.f, 0.f);
+    glRotatef(RotateTravelled*10, 0.f, 0.f, 1.f); //turn the windshaft
+    glTranslatef(-5.f, -5.f, 0.f); //then move it to the middle of the base
     glRotatef(90, 1.f, 0.f, 0.f);
     glScalef(10.f, 55.f, 10.f);
     DrawCube(3); //3 is the wood texture
@@ -68,7 +68,7 @@ void Windmill::Display(){
     
     //blade 1
     glPushMatrix();
-    TurnBlade(0, onBool, R);
+    TurnBlade(0, onBool, R); //turn using the class
     DrawBlade();
     glPopMatrix();
     
@@ -112,7 +112,8 @@ void Windmill::Update(const double &deltaTime){
 //created a Windmill class to make a option to turn the windmill on and off, and easiler to create blades
 void Windmill::TurnBlade(int bladeN, int onOff, float rN)
 {
-    switch (onOff) {
+    switch (onOff) //switch so that the windmill stop moving at 0
+    {
         case 0:
             switch (bladeN) {
                 case 0:
@@ -136,6 +137,7 @@ void Windmill::TurnBlade(int bladeN, int onOff, float rN)
          case 1:
             switch (bladeN) {
                 case 0:
+        //animate the blade rotation with RotateTravelled, passed from Display()
                     glRotatef(rN*10, 0.f, 0.f, 1.f);
                     break;
                     
@@ -157,7 +159,7 @@ void Windmill::TurnBlade(int bladeN, int onOff, float rN)
     }
     
 }
-
+//Keyinput, inspired from the camera inside the framework
 void Windmill::HandleKey(unsigned char key, int state, int x, int y)
 {
     switch (key)
@@ -176,23 +178,24 @@ void Windmill::HandleKey(unsigned char key, int state, int x, int y)
     }
 }
 
-
+//draw the blades
 void Windmill::DrawBlade(){
     
-    float wood2Size[3] = {5.f,30.f,5.f};
-    float bladeSize[3] = {25.f,100.f,wood2Size[2]};
+    float wood2Size[3] = {5.f,30.f,5.f}; //size of the wooden part
+    float bladeSize[3] = {25.f,100.f,wood2Size[2]}; //size of the blade part
     
-    glTranslatef(-wood2Size[0]/2, -wood2Size[2]/2, 50.f);
+    glTranslatef(-wood2Size[0]/2, -wood2Size[2]/2, 50.f);// move the wooden part just above the windshaft
     
     glPushMatrix();
     glScalef(wood2Size[0], wood2Size[1], wood2Size[2]);
-    DrawCube(3);
+    DrawCube(3);//draw the wooden part of the blade
     glPopMatrix();
-    glTranslatef((wood2Size[0]-bladeSize[0])/2, wood2Size[1], 0.f);
+    glTranslatef((wood2Size[0]-bladeSize[0])/2, wood2Size[1], 0.f); //move the blade part just above the wooden part of the blade
     glScalef(bladeSize[0],bladeSize[1],bladeSize[2]);
-    DrawCube(5);
+    DrawCube(5); //draw the blade
 }
 
+//draw triangles with texture just above the middle part of the windmill
 void Windmill::DrawTriangle(){
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _tMiddle);
@@ -216,6 +219,7 @@ void Windmill::DrawTriangle(){
     glDisable(GL_TEXTURE_2D);
 }
 
+//draw the roof part of the windmill
 void Windmill::DrawRoof(){
     
     
@@ -259,9 +263,11 @@ void Windmill::DrawRoof(){
     
 }
 
-
+//draw cubes for the windmill
 void Windmill::DrawCube(int x){
     unsigned char tex; //experimenting with switch, makes coding more efficient
+    //decide the type of texture, from the number passed from Display()
+    //there are 5 different texture
     switch (x)
     {
         
