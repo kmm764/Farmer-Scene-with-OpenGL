@@ -44,6 +44,8 @@ public:
 	* {@code width} and {@code height} refer to the window size of {@code Scene} {@link #parent}.
 	*/
 	virtual void Reset();
+    
+    virtual void Reset2();
 	/** Sets the window viewport of the scene */
 	virtual void SetViewport();
 
@@ -105,7 +107,7 @@ private:
 	 * Member variable used to track when a key is pressed between frames
 	 * so that we can do an update in the Update() function rather than HandleKey
 	 * function to obtain smooth motion */
-	int wKey, sKey, aKey, dKey, eKey, cKey, wSKey, sSKey, aSKey, dSKey, eSKey, cSKey;
+	int wKey, sKey, aKey, dKey, eKey, cKey, mKey;
 
 	/** Current rendering window dimensions */
 	int windowWidth, windowHeight;

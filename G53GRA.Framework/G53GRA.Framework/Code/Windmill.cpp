@@ -35,6 +35,10 @@ void Windmill::Display(){
     glPushMatrix();
     glScalef(150, yTop, 150);
     DrawTriangle();
+    glPopMatrix();
+    
+    glPushMatrix();
+    glScalef(150, yTop, 150);
     DrawRoof();
     glPopMatrix();
     
@@ -81,16 +85,26 @@ void Windmill::DrawRoof(){
         glTexCoord2f(1.f, 1.f);glVertex3f(0.5f,1.f,-1.f);
         glTexCoord2f(0.f, 1.f);glVertex3f(0.5f,1.f,0.f);
         
+        //right roof other side
+        glNormal3f(-1.0f, 0.0f, 0.0f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(1.f, 0.f, 0.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(0.5f,1.f,0.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.5f,1.f,-1.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(1.f,0.f,-1.f);
+        
         //left roof
-        /*glNormal3f(0.0f, 0.0f, -1.0f);
-        glTexCoord2f(0.f, 0.f);glVertex3f(1.f, 0.f, -1.f);
-        glTexCoord2f(1.f, 1.f);glVertex3f(0.f,0.f,-1.f);
-        glTexCoord2f(2.f, 0.f);glVertex3f(0.5f,1.f,-1.f);*/
         glNormal3f(-1.0f, 0.0f, 1.0f);
         glTexCoord2f(0.f, 0.f);glVertex3f(0.f, 0.f, -1.f);
         glTexCoord2f(1.f, 0.f);glVertex3f(0.f,0.f, 0.f);
         glTexCoord2f(1.f, 1.f);glVertex3f(0.5f,1.f,0.f);
         glTexCoord2f(0.f, 1.f);glVertex3f(0.5f,1.f,-1.f);
+        
+        //left roof
+        glNormal3f(1.0f, 0.0f, 1.0f);
+        glTexCoord2f(0.f, 0.f);glVertex3f(0.f, 0.f, -1.f);
+        glTexCoord2f(1.f, 0.f);glVertex3f(0.5f,1.f,-1.f);
+        glTexCoord2f(1.f, 1.f);glVertex3f(0.5f,1.f,0.f);
+        glTexCoord2f(0.f, 1.f);glVertex3f(0.f,0.f, 0.f);
         
     }
     glEnd();
@@ -126,8 +140,6 @@ void Windmill::DrawCube(int x){
             tex = _tBlade;
             break;
             
-        case ' ':
-            break;
         default:
             break;
     }

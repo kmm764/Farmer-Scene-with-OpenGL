@@ -49,8 +49,8 @@ void Moon::Display()
     glLightfv(GL_LIGHT3, GL_POSITION, position);
     
     GLfloat ambient1[3] = { 0.f, 0.f, 0.f};
-    GLfloat diffuse1[3] = { .715f, .715f, .715f};
-    GLfloat specular1[3] = {.715f, .715f,.715f};
+    GLfloat diffuse1[3] = { .515f, .515f, .715f};
+    GLfloat specular1[3] = {.515f, .515f,.715f};
     
     glLightfv(GL_LIGHT3, GL_AMBIENT, ambient1);
     glLightfv(GL_LIGHT3, GL_DIFFUSE, diffuse1);
@@ -58,7 +58,7 @@ void Moon::Display()
     
     glLightf(GL_LIGHT3, GL_CONSTANT_ATTENUATION, 0.f);
     glLightf(GL_LIGHT3, GL_LINEAR_ATTENUATION, 0.000001f);
-    glLightf(GL_LIGHT3, GL_QUADRATIC_ATTENUATION, 0.000003f);
+    glLightf(GL_LIGHT3, GL_QUADRATIC_ATTENUATION, 0.000001f);
     glEnable(GL_LIGHT3);
     glPopMatrix();
 }

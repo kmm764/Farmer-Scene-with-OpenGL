@@ -34,6 +34,34 @@ void Camera::Reset(){
 	up[2] = 0.0f;
 }
 
+void Camera::Reset2(){
+    // set the camera position to start at (0,0,0)
+    eyePosition[0] = -600.0f;
+    eyePosition[1] = 600.0f;
+    eyePosition[2] = 100+0.5f * static_cast<float>(Scene::GetWindowHeight()) / static_cast<float>(tan(M_PI / 6.0));//0.0f;
+    
+    // set the view direction vector of the camera to be (1,0,-1)
+    vd[0] = 0.65f;
+    vd[1] = -0.3f;
+    vd[2] = -1.0f;
+    
+    // set the planar forward direction vector of the camera to be (0,0,-1)
+    forward[0] = 0.0f;
+    forward[1] = 0.0f;
+    forward[2] = -1.0f;
+    
+    // set the right vector to point along the x axis
+    right[0] = 1.0f;
+    right[1] = 0.0f;
+    right[2] = 0.0f;
+    
+    // set the up vector of the camera to be up the y axis
+    up[0] = 0.0f;
+    up[1] = 1.0f;
+    up[2] = 0.0f;
+}
+
+
 void Camera::SetViewport()
 {
 	glViewport(static_cast<GLint>(0), static_cast<GLint>(0), static_cast<GLsizei>(Scene::GetWindowWidth()), static_cast<GLsizei>(Scene::GetWindowHeight()));
@@ -51,8 +79,13 @@ void Camera::SetupCamera()
 
 void Camera::Update(const double& deltaTime)
 {
-	float speed = 5.0f;
-
+    float speed = 3.0f;
+    
+    if (mKey)// added m key, when pressed speed is increaed to 10
+        
+        speed = 10.0f;
+    else
+        speed = 3.0f;
 	if (aKey)
 		sub(eyePosition, right, speed);
 
@@ -139,9 +172,16 @@ void Camera::HandleKey(unsigned char key, int state, int x, int y)
         case 'c':
             cKey = state;
             break;
+            
+        case 'm':
+            mKey = state;
+            break;
         
 		case ' ':
 			Reset();
+            
+        case 'p': //added another reset position
+            Reset2();
 		default:
 			break;
 	}
