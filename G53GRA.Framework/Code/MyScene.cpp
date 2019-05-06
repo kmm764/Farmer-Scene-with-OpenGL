@@ -22,7 +22,7 @@ void MyScene::Initialise()
     //-----------------------------------Texture-----------------------------------
     GLuint ft = Scene::GetTexture("stars.bmp"); //give options to change it to other bmp
     GLuint bk = Scene::GetTexture("stars.bmp"); //but decided on using only star.bmp for skybox
-    GLuint lf = Scene::GetTexture("grass2.bmp");
+    GLuint lf = Scene::GetTexture("stars.bmp");
     GLuint rt = Scene::GetTexture("stars.bmp");
     GLuint up = Scene::GetTexture("stars.bmp");
     GLuint dn = Scene::GetTexture("grass3.bmp");

@@ -15,33 +15,28 @@
 		192BE3C61E4CBD8B0040131F /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C21E4CBD8B0040131F /* Texture.cpp */; };
 		192BE3CA1E4CBD960040131F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C71E4CBD960040131F /* main.cpp */; };
 		192BE3CB1E4CBD960040131F /* MyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C81E4CBD960040131F /* MyScene.cpp */; };
-		48592BCA227EE8FF00A7B591 /* grass3.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BC9227EE8F000A7B591 /* grass3.bmp */; };
-		48592BCC227EEA4700A7B591 /* grass2.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BCB227EEA3C00A7B591 /* grass2.bmp */; };
-		48592BCE227EEBDB00A7B591 /* tRoof.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BCD227EEBD200A7B591 /* tRoof.bmp */; };
-		48592BD0227F0D8400A7B591 /* tBlade1.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BCF227F0D7C00A7B591 /* tBlade1.bmp */; };
-		48592BD2227F0F7900A7B591 /* tblade2.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BD1227F0F6900A7B591 /* tblade2.bmp */; };
+		48592BDE228038BE00A7B591 /* brownRoof.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BDD2280389800A7B591 /* brownRoof.bmp */; };
+		48592BDF228038BE00A7B591 /* grass3.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BDB2280389800A7B591 /* grass3.bmp */; };
+		48592BE0228038BE00A7B591 /* tBlade1.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BDA2280389800A7B591 /* tBlade1.bmp */; };
+		48592BE1228038BE00A7B591 /* tblade2.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BDC2280389800A7B591 /* tblade2.bmp */; };
+		48592BE2228038BE00A7B591 /* tBottom.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BD82280389700A7B591 /* tBottom.bmp */; };
+		48592BE3228038BE00A7B591 /* tBricks.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BD72280389700A7B591 /* tBricks.bmp */; };
+		48592BE4228038BE00A7B591 /* tBricks3.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BD62280389700A7B591 /* tBricks3.bmp */; };
+		48592BE5228038BE00A7B591 /* tMiddle.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BD52280389700A7B591 /* tMiddle.bmp */; };
+		48592BE6228038BE00A7B591 /* tMoon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BD32280389700A7B591 /* tMoon.bmp */; };
+		48592BE7228038BE00A7B591 /* tRoof.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BD42280389700A7B591 /* tRoof.bmp */; };
+		48592BE8228038BE00A7B591 /* tTop.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48592BD92280389800A7B591 /* tTop.bmp */; };
 		48F9ABF8227C671F0054F222 /* stars.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48685C52227C663F002256B8 /* stars.bmp */; };
 		48F9AC0B227CAEDA0054F222 /* House.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC09227CAEDA0054F222 /* House.cpp */; };
-		48F9AC0E227CE4560054F222 /* bricks.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC0D227CE3610054F222 /* bricks.bmp */; };
 		48F9AC11227CE85C0054F222 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC0F227CE85C0054F222 /* Human.cpp */; };
 		48F9AC17227DD81A0054F222 /* door.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC16227DD8140054F222 /* door.bmp */; };
 		48F9AC19227DD9E80054F222 /* window.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC18227DD9E00054F222 /* window.bmp */; };
-		48F9AC3F227DE7A10054F222 /* grass.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC1A227DE5C10054F222 /* grass.bmp */; };
 		48F9AC44227DF21D0054F222 /* Lamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC42227DF21D0054F222 /* Lamp.cpp */; };
 		48F9AC4A227E02970054F222 /* lamp.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC49227E028D0054F222 /* lamp.bmp */; };
 		48F9AC4C227E03D90054F222 /* chain.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC4B227E03D00054F222 /* chain.bmp */; };
 		48F9AC4F227E0BFA0054F222 /* Skybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC4D227E0BF90054F222 /* Skybox.cpp */; };
-		48F9AC51227E33720054F222 /* tBricks.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC50227E33690054F222 /* tBricks.bmp */; };
-		48F9AC53227E35300054F222 /* tBrick2.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC52227E35280054F222 /* tBrick2.bmp */; };
-		48F9AC57227E36BE0054F222 /* greyRoof.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC56227E36B90054F222 /* greyRoof.bmp */; };
-		48F9AC5D227E39150054F222 /* tBricks3.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC5C227E390F0054F222 /* tBricks3.bmp */; };
-		48F9AC5F227E39980054F222 /* brownRoof.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC5E227E39900054F222 /* brownRoof.bmp */; };
 		48F9AC65227E419B0054F222 /* Moon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC63227E419A0054F222 /* Moon.cpp */; };
-		48F9AC67227E41ED0054F222 /* tMoon.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC66227E41E70054F222 /* tMoon.bmp */; };
 		48F9AC6A227E4D7F0054F222 /* Windmill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F9AC68227E4D7F0054F222 /* Windmill.cpp */; };
-		48F9AC6E227E57840054F222 /* tBottom.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC6C227E577F0054F222 /* tBottom.bmp */; };
-		48F9AC6F227E57840054F222 /* tMiddle.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC6D227E57800054F222 /* tMiddle.bmp */; };
-		48F9AC70227E57840054F222 /* tTop.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 48F9AC6B227E577D0054F222 /* tTop.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,26 +46,21 @@
 			dstPath = .;
 			dstSubfolderSpec = 7;
 			files = (
-				48592BD2227F0F7900A7B591 /* tblade2.bmp in CopyFiles */,
-				48592BD0227F0D8400A7B591 /* tBlade1.bmp in CopyFiles */,
-				48592BCE227EEBDB00A7B591 /* tRoof.bmp in CopyFiles */,
-				48592BCC227EEA4700A7B591 /* grass2.bmp in CopyFiles */,
-				48592BCA227EE8FF00A7B591 /* grass3.bmp in CopyFiles */,
-				48F9AC6E227E57840054F222 /* tBottom.bmp in CopyFiles */,
-				48F9AC6F227E57840054F222 /* tMiddle.bmp in CopyFiles */,
-				48F9AC70227E57840054F222 /* tTop.bmp in CopyFiles */,
-				48F9AC67227E41ED0054F222 /* tMoon.bmp in CopyFiles */,
-				48F9AC5F227E39980054F222 /* brownRoof.bmp in CopyFiles */,
-				48F9AC5D227E39150054F222 /* tBricks3.bmp in CopyFiles */,
-				48F9AC57227E36BE0054F222 /* greyRoof.bmp in CopyFiles */,
-				48F9AC53227E35300054F222 /* tBrick2.bmp in CopyFiles */,
-				48F9AC51227E33720054F222 /* tBricks.bmp in CopyFiles */,
+				48592BDE228038BE00A7B591 /* brownRoof.bmp in CopyFiles */,
+				48592BDF228038BE00A7B591 /* grass3.bmp in CopyFiles */,
+				48592BE0228038BE00A7B591 /* tBlade1.bmp in CopyFiles */,
+				48592BE1228038BE00A7B591 /* tblade2.bmp in CopyFiles */,
+				48592BE2228038BE00A7B591 /* tBottom.bmp in CopyFiles */,
+				48592BE3228038BE00A7B591 /* tBricks.bmp in CopyFiles */,
+				48592BE4228038BE00A7B591 /* tBricks3.bmp in CopyFiles */,
+				48592BE5228038BE00A7B591 /* tMiddle.bmp in CopyFiles */,
+				48592BE6228038BE00A7B591 /* tMoon.bmp in CopyFiles */,
+				48592BE7228038BE00A7B591 /* tRoof.bmp in CopyFiles */,
+				48592BE8228038BE00A7B591 /* tTop.bmp in CopyFiles */,
 				48F9AC4C227E03D90054F222 /* chain.bmp in CopyFiles */,
 				48F9AC4A227E02970054F222 /* lamp.bmp in CopyFiles */,
-				48F9AC3F227DE7A10054F222 /* grass.bmp in CopyFiles */,
 				48F9AC19227DD9E80054F222 /* window.bmp in CopyFiles */,
 				48F9AC17227DD81A0054F222 /* door.bmp in CopyFiles */,
-				48F9AC0E227CE4560054F222 /* bricks.bmp in CopyFiles */,
 				48F9ABF8227C671F0054F222 /* stars.bmp in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,39 +86,34 @@
 		192BE3C71E4CBD960040131F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Code/main.cpp; sourceTree = SOURCE_ROOT; };
 		192BE3C81E4CBD960040131F /* MyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyScene.cpp; path = Code/MyScene.cpp; sourceTree = SOURCE_ROOT; };
 		192BE3C91E4CBD960040131F /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScene.h; path = Code/MyScene.h; sourceTree = SOURCE_ROOT; };
-		48592BC9227EE8F000A7B591 /* grass3.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = grass3.bmp; sourceTree = "<group>"; };
-		48592BCB227EEA3C00A7B591 /* grass2.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = grass2.bmp; sourceTree = "<group>"; };
-		48592BCD227EEBD200A7B591 /* tRoof.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tRoof.bmp; sourceTree = "<group>"; };
-		48592BCF227F0D7C00A7B591 /* tBlade1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tBlade1.bmp; sourceTree = "<group>"; };
-		48592BD1227F0F6900A7B591 /* tblade2.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tblade2.bmp; sourceTree = "<group>"; };
+		48592BD32280389700A7B591 /* tMoon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tMoon.bmp; path = Textures/tMoon.bmp; sourceTree = SOURCE_ROOT; };
+		48592BD42280389700A7B591 /* tRoof.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tRoof.bmp; path = Textures/tRoof.bmp; sourceTree = SOURCE_ROOT; };
+		48592BD52280389700A7B591 /* tMiddle.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tMiddle.bmp; path = Textures/tMiddle.bmp; sourceTree = SOURCE_ROOT; };
+		48592BD62280389700A7B591 /* tBricks3.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tBricks3.bmp; path = Textures/tBricks3.bmp; sourceTree = SOURCE_ROOT; };
+		48592BD72280389700A7B591 /* tBricks.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tBricks.bmp; path = Textures/tBricks.bmp; sourceTree = SOURCE_ROOT; };
+		48592BD82280389700A7B591 /* tBottom.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tBottom.bmp; path = Textures/tBottom.bmp; sourceTree = SOURCE_ROOT; };
+		48592BD92280389800A7B591 /* tTop.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tTop.bmp; path = Textures/tTop.bmp; sourceTree = SOURCE_ROOT; };
+		48592BDA2280389800A7B591 /* tBlade1.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tBlade1.bmp; path = Textures/tBlade1.bmp; sourceTree = SOURCE_ROOT; };
+		48592BDB2280389800A7B591 /* grass3.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = grass3.bmp; path = Textures/grass3.bmp; sourceTree = SOURCE_ROOT; };
+		48592BDC2280389800A7B591 /* tblade2.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = tblade2.bmp; path = Textures/tblade2.bmp; sourceTree = SOURCE_ROOT; };
+		48592BDD2280389800A7B591 /* brownRoof.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = brownRoof.bmp; path = Textures/brownRoof.bmp; sourceTree = SOURCE_ROOT; };
 		48685C52227C663F002256B8 /* stars.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = stars.bmp; path = Textures/stars.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC09227CAEDA0054F222 /* House.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = House.cpp; path = Code/House.cpp; sourceTree = SOURCE_ROOT; };
 		48F9AC0A227CAEDA0054F222 /* House.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = House.h; path = Code/House.h; sourceTree = SOURCE_ROOT; };
-		48F9AC0D227CE3610054F222 /* bricks.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = bricks.bmp; path = Textures/bricks.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC0F227CE85C0054F222 /* Human.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Human.cpp; path = Code/Human.cpp; sourceTree = SOURCE_ROOT; };
 		48F9AC10227CE85C0054F222 /* Human.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Human.h; path = Code/Human.h; sourceTree = SOURCE_ROOT; };
 		48F9AC16227DD8140054F222 /* door.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = door.bmp; path = Textures/door.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC18227DD9E00054F222 /* window.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = window.bmp; path = Textures/window.bmp; sourceTree = SOURCE_ROOT; };
-		48F9AC1A227DE5C10054F222 /* grass.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = grass.bmp; path = G53GRA.Framework/grass.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC42227DF21D0054F222 /* Lamp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Lamp.cpp; path = Code/Lamp.cpp; sourceTree = SOURCE_ROOT; };
 		48F9AC43227DF21D0054F222 /* Lamp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Lamp.h; path = Code/Lamp.h; sourceTree = SOURCE_ROOT; };
 		48F9AC49227E028D0054F222 /* lamp.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = lamp.bmp; path = Textures/lamp.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC4B227E03D00054F222 /* chain.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = chain.bmp; path = Textures/chain.bmp; sourceTree = SOURCE_ROOT; };
 		48F9AC4D227E0BF90054F222 /* Skybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Skybox.cpp; path = Code/Skybox.cpp; sourceTree = SOURCE_ROOT; };
 		48F9AC4E227E0BFA0054F222 /* Skybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Skybox.h; path = Code/Skybox.h; sourceTree = SOURCE_ROOT; };
-		48F9AC50227E33690054F222 /* tBricks.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tBricks.bmp; sourceTree = "<group>"; };
-		48F9AC52227E35280054F222 /* tBrick2.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tBrick2.bmp; sourceTree = "<group>"; };
-		48F9AC56227E36B90054F222 /* greyRoof.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = greyRoof.bmp; sourceTree = "<group>"; };
-		48F9AC5C227E390F0054F222 /* tBricks3.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tBricks3.bmp; sourceTree = "<group>"; };
-		48F9AC5E227E39900054F222 /* brownRoof.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = brownRoof.bmp; sourceTree = "<group>"; };
 		48F9AC63227E419A0054F222 /* Moon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Moon.cpp; path = Code/Moon.cpp; sourceTree = SOURCE_ROOT; };
 		48F9AC64227E419A0054F222 /* Moon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Moon.h; path = Code/Moon.h; sourceTree = SOURCE_ROOT; };
-		48F9AC66227E41E70054F222 /* tMoon.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tMoon.bmp; sourceTree = "<group>"; };
 		48F9AC68227E4D7F0054F222 /* Windmill.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Windmill.cpp; path = Code/Windmill.cpp; sourceTree = SOURCE_ROOT; };
 		48F9AC69227E4D7F0054F222 /* Windmill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Windmill.h; path = Code/Windmill.h; sourceTree = SOURCE_ROOT; };
-		48F9AC6B227E577D0054F222 /* tTop.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tTop.bmp; sourceTree = "<group>"; };
-		48F9AC6C227E577F0054F222 /* tBottom.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tBottom.bmp; sourceTree = "<group>"; };
-		48F9AC6D227E57800054F222 /* tMiddle.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = tMiddle.bmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,26 +233,21 @@
 		19968D6C1E54B35000540281 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
-				48592BD1227F0F6900A7B591 /* tblade2.bmp */,
-				48592BCF227F0D7C00A7B591 /* tBlade1.bmp */,
-				48592BCD227EEBD200A7B591 /* tRoof.bmp */,
-				48592BCB227EEA3C00A7B591 /* grass2.bmp */,
-				48592BC9227EE8F000A7B591 /* grass3.bmp */,
-				48F9AC6C227E577F0054F222 /* tBottom.bmp */,
-				48F9AC6D227E57800054F222 /* tMiddle.bmp */,
-				48F9AC6B227E577D0054F222 /* tTop.bmp */,
-				48F9AC66227E41E70054F222 /* tMoon.bmp */,
-				48F9AC5E227E39900054F222 /* brownRoof.bmp */,
-				48F9AC5C227E390F0054F222 /* tBricks3.bmp */,
-				48F9AC56227E36B90054F222 /* greyRoof.bmp */,
-				48F9AC52227E35280054F222 /* tBrick2.bmp */,
-				48F9AC50227E33690054F222 /* tBricks.bmp */,
+				48592BDD2280389800A7B591 /* brownRoof.bmp */,
+				48592BDB2280389800A7B591 /* grass3.bmp */,
+				48592BDA2280389800A7B591 /* tBlade1.bmp */,
+				48592BDC2280389800A7B591 /* tblade2.bmp */,
+				48592BD82280389700A7B591 /* tBottom.bmp */,
+				48592BD72280389700A7B591 /* tBricks.bmp */,
+				48592BD62280389700A7B591 /* tBricks3.bmp */,
+				48592BD52280389700A7B591 /* tMiddle.bmp */,
+				48592BD32280389700A7B591 /* tMoon.bmp */,
+				48592BD42280389700A7B591 /* tRoof.bmp */,
+				48592BD92280389800A7B591 /* tTop.bmp */,
 				48F9AC4B227E03D00054F222 /* chain.bmp */,
 				48F9AC49227E028D0054F222 /* lamp.bmp */,
-				48F9AC1A227DE5C10054F222 /* grass.bmp */,
 				48F9AC18227DD9E00054F222 /* window.bmp */,
 				48F9AC16227DD8140054F222 /* door.bmp */,
-				48F9AC0D227CE3610054F222 /* bricks.bmp */,
 				48685C52227C663F002256B8 /* stars.bmp */,
 			);
 			name = Textures;
